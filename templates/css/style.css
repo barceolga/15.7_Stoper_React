@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  body nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px; }
+    body nav .button {
+      width: 130px;
+      height: auto;
+      text-decoration: none;
+      margin: 15px;
+      background-color: #ff99e6;
+      color: #330026;
+      text-shadow: 3px 1px #ffe066;
+      text-align: center;
+      padding: 25px;
+      font-size: 35px;
+      font-weight: 800;
+      border: none;
+      border-radius: 15px;
+      transition: 1s linear; }
+      body nav .button:hover {
+        color: #ff99e6;
+        text-shadow: none;
+        background-color: #330026; }
+  body .stopwatch {
+    min-width: 33%;
+    border: 10px solid #141f1f;
+    text-shadow: 2px 2px #ff66d9;
+    text-transform: uppercase;
+    margin: 25px;
+    padding: 25px;
+    background-color: #b3cccc;
+    color: #141f1f;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center; }
+  body .results {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 25px; }
+    body .results li {
+      min-width: 33%;
+      margin-right: 40px;
+      margin-bottom: 10px;
+      font-size: 25px;
+      font-weight: 600;
+      color: #330026;
+      background-color: #ffd9b3;
+      border: 10px solid #330026;
+      text-align: center;
+      text-shadow: 3px 1px #ffe066;
+      padding: 15px; }
+      body .results li span {
+        font-size: 25px;
+        font-weight: 800;
+        color: #ff00bf;
+        text-shadow: 1px 1px #3c5d5d;
+        padding: 10px; }
+      body .results li button {
+        padding: 10px;
+        font-size: 15px;
+        font-weight: 800;
+        color: #ff99e6;
+        text-align: center;
+        text-shadow: none;
+        background-color: #330026;
+        transition: 1s linear; }
+        body .results li button:hover {
+          color: #330026;
+          text-shadow: 3px 1px #ffe066;
+          background-color: #ff99e6; }
