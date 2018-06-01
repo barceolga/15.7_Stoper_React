@@ -1,0 +1,30 @@
+{
+  "name": "15.7_Stoper_React",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script-compiled.js",
+  "scripts": {
+    "start": "babel script.js --watch --out-file script-compiled.js",
+    "sass:watch": "node-sass ./templates/sass/ -wo ./templates/css/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barceolga/15.6_Stoper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barceolga/15.6_Stoper/issues"
+  },
+  "homepage": "https://github.com/barceolga/15.6_Stoper#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "node-sass": "^4.9.0"
+  },
+  "dependencies": {
+    "hoek": "^5.0.3"
+  }
+}
