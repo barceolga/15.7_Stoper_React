@@ -1,27 +1,21 @@
 {
-  "name": "15.7_Stoper_React",
+  "name": "Stoper_React_feralny",
   "version": "1.0.0",
   "description": "",
-  "main": "script-compiled.js",
+  "main": "script.js",
   "scripts": {
     "start": "babel script.js --watch --out-file script-compiled.js",
     "sass:watch": "node-sass ./templates/sass/ -wo ./templates/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/barceolga/15.6_Stoper.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/barceolga/15.6_Stoper/issues"
-  },
-  "homepage": "https://github.com/barceolga/15.6_Stoper#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-latest": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
     "node-sass": "^4.9.0"
   },
   "dependencies": {
