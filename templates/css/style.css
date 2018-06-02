@@ -7,42 +7,60 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
-  body nav {
+  body .controls {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 100px; }
-    body nav .button {
-      width: 130px;
-      height: auto;
-      text-decoration: none;
-      margin: 15px;
-      background-color: #ff99e6;
-      color: #330026;
-      text-shadow: 3px 1px #ffe066;
-      text-align: center;
-      padding: 25px;
-      font-size: 35px;
-      font-weight: 800;
-      border: none;
-      border-radius: 15px;
-      transition: 1s linear; }
-      body nav .button:hover {
-        color: #ff99e6;
-        text-shadow: none;
-        background-color: #330026; }
+    margin: 25px; }
+    body .controls .controls_panel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 80%;
+      background-color: #52527a; }
+      body .controls .controls_panel .button {
+        width: 130px;
+        height: auto;
+        text-decoration: none;
+        margin: 15px;
+        background-color: #ff99e6;
+        color: #330026;
+        text-shadow: 3px 1px #ffe066;
+        text-align: center;
+        padding: 25px;
+        font-size: 35px;
+        font-weight: 800;
+        border: none;
+        border-radius: 15px;
+        transition: 1s linear; }
+        body .controls .controls_panel .button:hover {
+          color: #ff99e6;
+          text-shadow: none;
+          background-color: #330026; }
   body .stopwatch {
-    min-width: 33%;
+    max-width: 33%;
     border: 10px solid #141f1f;
     text-shadow: 2px 2px #ff66d9;
     text-transform: uppercase;
-    margin: 25px;
+    margin: 0 auto;
     padding: 25px;
     background-color: #b3cccc;
     color: #141f1f;
     font-size: 35px;
     font-weight: 600;
     text-align: center; }
+  body .table_results {
+    margin: 25px auto;
+    max-width: 50%;
+    background-color: #ff99e6;
+    color: #330026;
+    border: 10px solid #330026;
+    text-align: center;
+    font-size: 600;
+    text-transform: capitalize;
+    text-shadow: 3px 1px #ffe066;
+    padding: 25px; }
   body .results {
     list-style-type: none;
     display: flex;
@@ -57,7 +75,7 @@ body {
       font-size: 25px;
       font-weight: 600;
       color: #330026;
-      background-color: #ffd9b3;
+      background-color: #b3cccc;
       border: 10px solid #330026;
       text-align: center;
       text-shadow: 3px 1px #ffe066;
@@ -65,8 +83,8 @@ body {
       body .results li span {
         font-size: 25px;
         font-weight: 800;
-        color: #ff00bf;
-        text-shadow: 1px 1px #3c5d5d;
+        color: #3d5c5c;
+        text-shadow: 2px 2px #ff99e6;
         padding: 10px; }
       body .results li button {
         padding: 10px;
