@@ -105,7 +105,6 @@ var Stopwatch = function (_React$Component) {
         result: _this.format(),
         myValue: 60000 * _this.state.times.minutes + 1000 * _this.state.times.seconds + 10 * _this.state.times.miliseconds
       };
-      //console.log(newResult);
       _this.setState({ list: [].concat(_toConsumableArray(_this.state.list), [newResult]) });
       _this.sortResults();
     };
@@ -206,10 +205,6 @@ var Stopwatch = function (_React$Component) {
     };
     return _this;
   }
-
-  /*compare = (a,b) => {
-   return a -b;
-  }*/
 
   return Stopwatch;
 }(React.Component);

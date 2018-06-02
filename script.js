@@ -99,7 +99,6 @@ class Stopwatch extends React.Component {
             result: this.format(),
             myValue: (60000 *this.state.times.minutes) +(1000 * this.state.times.seconds)  + (10 * this.state.times.miliseconds),
           };
-          //console.log(newResult);
           this.setState({list:[...this.state.list, newResult]});
           this.sortResults();
         }
@@ -110,9 +109,6 @@ class Stopwatch extends React.Component {
       });
     }
 
-    /*compare = (a,b) => {
-     return a -b;
-   }*/
 
     sortResults = () => {
         let newResult = {
