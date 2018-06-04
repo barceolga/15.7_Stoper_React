@@ -112,7 +112,7 @@ class Stopwatch extends React.Component {
 
     sortResults = () => {
         let newResult = {
-          id: (60000 *this.state.times.minutes) +(1000 * this.state.times.seconds)  + (10 * this.state.times.miliseconds),
+          id: (this.state.list.length),
           result: this.format(),
           myValue: (60000 *this.state.times.minutes) +(1000 * this.state.times.seconds)  + (10 * this.state.times.miliseconds),
         };
@@ -121,6 +121,7 @@ class Stopwatch extends React.Component {
         this.setState({
             list: finalList
           });
+  
     }
 
 
@@ -187,7 +188,7 @@ class Results extends React.Component {
           return (
             <li key={ele.id}>
                       Result: <span>{ele.result}</span>
-                      <button className = {'button'} onClick = {() => this.deleteResultWithId(id)}>Delete</button>
+                      <button className = {'button'} onClick = {() => this.deleteResultWithId()}>Delete</button>
             </li>
           );
 
