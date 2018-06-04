@@ -9,8 +9,8 @@ class Stopwatch extends React.Component {
         seconds: 0,
         miliseconds: 0
       },
-      list: [],
-      newList: []
+      list: []
+      //newList: []
     };
   }
 
@@ -105,7 +105,7 @@ class Stopwatch extends React.Component {
 
     clearResults = () => {
       this.setState({
-        newList: []
+        list: []
       });
     }
 
@@ -116,13 +116,11 @@ class Stopwatch extends React.Component {
           result: this.format(),
           myValue: (60000 *this.state.times.minutes) +(1000 * this.state.times.seconds)  + (10 * this.state.times.miliseconds),
         };
-        const newList = [...this.state.list, newResult];
-        console.log(newList);
-          let finalList = newList.sort(function(a, b) {return (a.myValue > b.myValue) ? 1 : ((b.myValue > a.myValue) ? -1 : 0);});
+        const list = [...this.state.list, newResult];
+          let finalList = list.sort(function(a, b) {return (a.myValue > b.myValue) ? 1 : ((b.myValue > a.myValue) ? -1 : 0);});
         this.setState({
-            newList: finalList
+            list: finalList
           });
-        console.log(newResult);
     }
 
 
@@ -142,7 +140,7 @@ class Stopwatch extends React.Component {
                 <Display time={this.format()} ></Display>
             </div>
             <h1 className={'table_results'}>Table of results</h1>
-            <Results newList={this.state.newList} className = {'results'}></Results>
+            <Results list={this.state.list} className = {'results'}></Results>
           </div>
         );
 
@@ -170,28 +168,29 @@ class Results extends React.Component {
         super(props);
         this.state = {
           running: false,
-          newList: []
+          list: []
         }
       }
 
     static propTypes = {
-      newList: React.PropTypes.array.isRequired
+      list: React.PropTypes.array.isRequired
     }
 
     deleteResultWithId = (id) => {
          this.setState({
-             newList: this.state.newList.filter( ele => ele.id !== id)
+             list: this.state.list.filter( ele => ele.id !== id)
            });
     }
 
     render () {
-        let myresults = this.props.newList.map( ele => {
+        let myresults = this.props.list.map( ele => {
           return (
             <li key={ele.id}>
                       Result: <span>{ele.result}</span>
-                      <button className = {'button'} onClick = {() => this.deleteResultWithId()}>Delete</button>
+                      <button className = {'button'} onClick = {() => this.deleteResultWithId(id)}>Delete</button>
             </li>
           );
+
       });
         return (
               <ul className={'results'}>
