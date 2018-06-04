@@ -1,6 +1,11 @@
 *{
   box-sizing: border-box;
 }
+$pale-rose: #ffccf3;
+$deep-violet: #330026;
+$honey-yellow: #ffe066;
+$steel-blue: #b3cccc;
+$dark-steel-blue: #141f1f;
 
 body {
   background-color: beige;
@@ -25,9 +30,9 @@ body {
         height: auto;
         text-decoration: none;
         margin: 15px;
-        background-color: #ff99e6;
-        color: #330026;
-        text-shadow: 3px 1px #ffe066;
+        background-color: $pale-rose;
+        color: $deep-violet;
+        text-shadow: 3px 1px $honey-yellow;
         text-align: center;
         padding: 25px;
         font-size: 35px;
@@ -36,22 +41,22 @@ body {
         border-radius: 15px;
         transition: 1s linear;
         &:hover{
-          color: #ff99e6;
+          color: $pale-rose;
           text-shadow: none;
-          background-color: #330026;
+          background-color: $deep-violet;
         }
       }
     }
   }
   .stopwatch {
     max-width: 33%;
-    border: 10px solid #141f1f;
+    border: 10px solid $dark-steel-blue;
     text-shadow: 2px 2px #ff66d9;
     text-transform: uppercase;
     margin: 0 auto;
     padding: 25px;
-    background-color: #b3cccc;
-    color: #141f1f;
+    background-color: $steel-blue;
+    color: $dark-steel-blue;
     font-size: 35px;
     font-weight: 600;
     text-align: center
@@ -60,13 +65,13 @@ body {
     .table_results {
         margin: 25px auto;
         max-width: 50%;
-        background-color: #ff99e6;
-        color: #330026;
-        border: 10px solid #330026;
+        background-color: $pale-rose;
+        color: $deep-violet;
+        border: 10px solid $deep-violet;
         text-align: center;
         font-size: 600;
         text-transform: capitalize;
-        text-shadow: 3px 1px #ffe066;
+        text-shadow: 3px 1px $honey-yellow;
         padding: 25px;
     }
     .results {
@@ -82,32 +87,32 @@ body {
             margin-bottom: 10px;
             font-size: 25px;
             font-weight: 600;
-            color: #330026;
-            background-color: #b3cccc;
-            border: 10px solid #330026;
+            color: $deep-violet;
+            background-color: $steel-blue;
+            border: 10px solid $deep-violet;
             text-align: center;
-            text-shadow: 3px 1px #ffe066;
+            text-shadow: 3px 1px $honey-yellow;
             padding: 15px;
           span {
               font-size: 25px;
               font-weight: 800;
               color: #3d5c5c;
-              text-shadow: 2px 2px #ff99e6;
+              text-shadow: 2px 2px $pale-rose;
               padding: 10px;
         }
           button {
               padding: 10px;
               font-size: 15px;
               font-weight: 800;
-              color:  #ff99e6;
+              color:  $pale-rose;
               text-align: center;
               text-shadow: none;
-              background-color: #330026;
+              background-color: $deep-violet;
             transition: 1s linear;
               &:hover{
-                color: #330026;
-                text-shadow: 3px 1px #ffe066;;
-                background-color: #ff99e6;
+                color: $deep-violet;
+                text-shadow: 3px 1px $honey-yellow;
+                background-color: $pale-rose;
           }
         }
       }

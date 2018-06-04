@@ -24,7 +24,7 @@ body {
         height: auto;
         text-decoration: none;
         margin: 15px;
-        background-color: #ff99e6;
+        background-color: #ffccf3;
         color: #330026;
         text-shadow: 3px 1px #ffe066;
         text-align: center;
@@ -35,7 +35,7 @@ body {
         border-radius: 15px;
         transition: 1s linear; }
         body .controls .controls_panel .button:hover {
-          color: #ff99e6;
+          color: #ffccf3;
           text-shadow: none;
           background-color: #330026; }
   body .stopwatch {
@@ -53,7 +53,7 @@ body {
   body .table_results {
     margin: 25px auto;
     max-width: 50%;
-    background-color: #ff99e6;
+    background-color: #ffccf3;
     color: #330026;
     border: 10px solid #330026;
     text-align: center;
@@ -84,13 +84,13 @@ body {
         font-size: 25px;
         font-weight: 800;
         color: #3d5c5c;
-        text-shadow: 2px 2px #ff99e6;
+        text-shadow: 2px 2px #ffccf3;
         padding: 10px; }
       body .results li button {
         padding: 10px;
         font-size: 15px;
         font-weight: 800;
-        color: #ff99e6;
+        color: #ffccf3;
         text-align: center;
         text-shadow: none;
         background-color: #330026;
@@ -98,4 +98,4 @@ body {
         body .results li button:hover {
           color: #330026;
           text-shadow: 3px 1px #ffe066;
-          background-color: #ff99e6; }
+          background-color: #ffccf3; }
