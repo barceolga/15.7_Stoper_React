@@ -111,7 +111,7 @@ var Stopwatch = function (_React$Component) {
 
     _this.clearResults = function () {
       _this.setState({
-        newList: []
+        list: []
       });
     };
 
@@ -121,15 +121,13 @@ var Stopwatch = function (_React$Component) {
         result: _this.format(),
         myValue: 60000 * _this.state.times.minutes + 1000 * _this.state.times.seconds + 10 * _this.state.times.miliseconds
       };
-      var newList = [].concat(_toConsumableArray(_this.state.list), [newResult]);
-      console.log(newList);
-      var finalList = newList.sort(function (a, b) {
+      var list = [].concat(_toConsumableArray(_this.state.list), [newResult]);
+      var finalList = list.sort(function (a, b) {
         return a.myValue > b.myValue ? 1 : b.myValue > a.myValue ? -1 : 0;
       });
       _this.setState({
-        newList: finalList
+        list: finalList
       });
-      console.log(newResult);
     };
 
     _this.render = function () {
@@ -189,7 +187,7 @@ var Stopwatch = function (_React$Component) {
           { className: 'table_results' },
           'Table of results'
         ),
-        React.createElement(Results, { newList: _this.state.newList, className: 'results' })
+        React.createElement(Results, { list: _this.state.list, className: 'results' })
       );
     };
 
@@ -200,8 +198,8 @@ var Stopwatch = function (_React$Component) {
         seconds: 0,
         miliseconds: 0
       },
-      list: [],
-      newList: []
+      list: []
+      //newList: []
     };
     return _this;
   }
@@ -247,7 +245,7 @@ var Results = function (_React$Component3) {
 
     _this3.deleteResultWithId = function (id) {
       _this3.setState({
-        newList: _this3.state.newList.filter(function (ele) {
+        list: _this3.state.list.filter(function (ele) {
           return ele.id !== id;
         })
       });
@@ -255,7 +253,7 @@ var Results = function (_React$Component3) {
 
     _this3.state = {
       running: false,
-      newList: []
+      list: []
     };
     return _this3;
   }
@@ -265,7 +263,7 @@ var Results = function (_React$Component3) {
     value: function render() {
       var _this4 = this;
 
-      var myresults = this.props.newList.map(function (ele) {
+      var myresults = this.props.list.map(function (ele) {
         return React.createElement(
           'li',
           { key: ele.id },
@@ -278,7 +276,7 @@ var Results = function (_React$Component3) {
           React.createElement(
             'button',
             { className: 'button', onClick: function onClick() {
-                return _this4.deleteResultWithId();
+                return _this4.deleteResultWithId(id);
               } },
             'Delete'
           )
@@ -296,7 +294,7 @@ var Results = function (_React$Component3) {
 }(React.Component);
 
 Results.propTypes = {
-  newList: React.PropTypes.array.isRequired
+  list: React.PropTypes.array.isRequired
 };
 
 
