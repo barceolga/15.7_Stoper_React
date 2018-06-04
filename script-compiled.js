@@ -130,6 +130,14 @@ var Stopwatch = function (_React$Component) {
       });
     };
 
+    _this.deleteResultWithId = function (id) {
+      _this.setState({
+        list: _this.state.list.filter(function (ele) {
+          return ele.id !== id;
+        })
+      });
+    };
+
     _this.render = function () {
       return React.createElement(
         'div',
@@ -243,14 +251,6 @@ var Results = function (_React$Component3) {
 
     var _this3 = _possibleConstructorReturn(this, (Results.__proto__ || Object.getPrototypeOf(Results)).call(this, props));
 
-    _this3.deleteResultWithId = function (id) {
-      _this3.setState({
-        list: _this3.state.list.filter(function (ele) {
-          return ele.id !== id;
-        })
-      });
-    };
-
     _this3.state = {
       running: false,
       list: []
@@ -276,7 +276,7 @@ var Results = function (_React$Component3) {
           React.createElement(
             'button',
             { className: 'button', onClick: function onClick() {
-                return _this4.deleteResultWithId();
+                return _this4.deleteResultWithId(ele.id);
               } },
             'Delete'
           )

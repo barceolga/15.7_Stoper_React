@@ -121,9 +121,14 @@ class Stopwatch extends React.Component {
         this.setState({
             list: finalList
           });
-  
+
     }
 
+    deleteResultWithId = (id) => {
+         this.setState({
+             list: this.state.list.filter( ele => ele.id !== id)
+           });
+         }
 
     render = () => {
         return (
@@ -177,18 +182,12 @@ class Results extends React.Component {
       list: React.PropTypes.array.isRequired
     }
 
-    deleteResultWithId = (id) => {
-         this.setState({
-             list: this.state.list.filter( ele => ele.id !== id)
-           });
-    }
-
     render () {
         let myresults = this.props.list.map( ele => {
           return (
             <li key={ele.id}>
                       Result: <span>{ele.result}</span>
-                      <button className = {'button'} onClick = {() => this.deleteResultWithId()}>Delete</button>
+                      <button className = {'button'} onClick = {() => this.deleteResultWithId(ele.id)}>Delete</button>
             </li>
           );
 
