@@ -276,7 +276,7 @@ var Results = function (_React$Component3) {
           React.createElement(
             'button',
             { className: 'button', onClick: function onClick() {
-                return _this4.deleteResultWithId(ele.id);
+                return _this4.deleteResultWithId();
               } },
             'Delete'
           )

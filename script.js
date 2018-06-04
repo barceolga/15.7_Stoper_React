@@ -171,10 +171,11 @@ class Display extends React.Component{
 
 class Results extends React.Component {
     constructor(props) {
-        super(props);
+        super();
         this.state = {
           running: false,
-          list: []
+          list: [],
+          this.props.deleteResultWithId(ele.id)
         }
       }
 
@@ -187,7 +188,7 @@ class Results extends React.Component {
           return (
             <li key={ele.id}>
                       Result: <span>{ele.result}</span>
-                      <button className = {'button'} onClick = {() => this.deleteResultWithId(ele.id)}>Delete</button>
+                      <button className = {'button'} onClick = {() => this.deleteResultWithId()}>Delete</button>
             </li>
           );
 
