@@ -117,7 +117,7 @@ var Stopwatch = function (_React$Component) {
 
     _this.sortResults = function () {
       var newResult = {
-        id: 60000 * _this.state.times.minutes + 1000 * _this.state.times.seconds + 10 * _this.state.times.miliseconds,
+        id: _this.state.list.length,
         result: _this.format(),
         myValue: 60000 * _this.state.times.minutes + 1000 * _this.state.times.seconds + 10 * _this.state.times.miliseconds
       };
@@ -276,7 +276,7 @@ var Results = function (_React$Component3) {
           React.createElement(
             'button',
             { className: 'button', onClick: function onClick() {
-                return _this4.deleteResultWithId(id);
+                return _this4.deleteResultWithId();
               } },
             'Delete'
           )
