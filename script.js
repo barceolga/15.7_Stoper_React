@@ -95,7 +95,7 @@ class Stopwatch extends React.Component {
 
     addResult = () => {
           let newResult= {
-            id: (60000 *this.state.times.minutes) +(1000 * this.state.times.seconds)  + (10 * this.state.times.miliseconds),
+            id: (this.state.list.length),
             result: this.format(),
             myValue: (60000 *this.state.times.minutes) +(1000 * this.state.times.seconds)  + (10 * this.state.times.miliseconds),
           };
@@ -146,7 +146,7 @@ class Stopwatch extends React.Component {
                 <Display time={this.format()} ></Display>
             </div>
             <h1 className={'table_results'}>Table of results</h1>
-            <Results list={this.state.list} className = {'results'}></Results>
+            <Results list={this.state.list} className = {'results'} deleteResultWithId={this.deleteResultWithId}></Results>
           </div>
         );
 
@@ -175,8 +175,8 @@ class Results extends React.Component {
         this.state = {
           running: false,
           list: [],
-          this.props.deleteResultWithId(ele.id)
-        }
+        };
+        //this.props.list.deleteResultWithId(ele.id);
       }
 
     static propTypes = {
@@ -188,7 +188,7 @@ class Results extends React.Component {
           return (
             <li key={ele.id}>
                       Result: <span>{ele.result}</span>
-                      <button className = {'button'} onClick = {() => this.deleteResultWithId()}>Delete</button>
+                      <button className = {'button'} onClick = {() => this.props.deleteResultWithId(ele.id)}>Delete</button>
             </li>
           );
 

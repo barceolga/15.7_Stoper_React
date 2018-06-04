@@ -101,7 +101,7 @@ var Stopwatch = function (_React$Component) {
 
     _this.addResult = function () {
       var newResult = {
-        id: 60000 * _this.state.times.minutes + 1000 * _this.state.times.seconds + 10 * _this.state.times.miliseconds,
+        id: _this.state.list.length,
         result: _this.format(),
         myValue: 60000 * _this.state.times.minutes + 1000 * _this.state.times.seconds + 10 * _this.state.times.miliseconds
       };
@@ -195,7 +195,7 @@ var Stopwatch = function (_React$Component) {
           { className: 'table_results' },
           'Table of results'
         ),
-        React.createElement(Results, { list: _this.state.list, className: 'results' })
+        React.createElement(Results, { list: _this.state.list, className: 'results', deleteResultWithId: _this.deleteResultWithId })
       );
     };
 
@@ -249,12 +249,13 @@ var Results = function (_React$Component3) {
   function Results(props) {
     _classCallCheck(this, Results);
 
-    var _this3 = _possibleConstructorReturn(this, (Results.__proto__ || Object.getPrototypeOf(Results)).call(this, props));
+    var _this3 = _possibleConstructorReturn(this, (Results.__proto__ || Object.getPrototypeOf(Results)).call(this));
 
     _this3.state = {
       running: false,
       list: []
     };
+    //this.props.list.deleteResultWithId(ele.id);
     return _this3;
   }
 
@@ -276,7 +277,7 @@ var Results = function (_React$Component3) {
           React.createElement(
             'button',
             { className: 'button', onClick: function onClick() {
-                return _this4.deleteResultWithId();
+                return _this4.props.deleteResultWithId(ele.id);
               } },
             'Delete'
           )
