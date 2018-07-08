@@ -2,100 +2,143 @@
   box-sizing: border-box; }
 
 body {
-  background-color: beige;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center; }
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: #ffe066;
+  background-image: url("Running_1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: content-box;
+  position: relative; }
   body .controls {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 25px; }
+    margin: 5px;
+    height: 35%; }
+    body .controls .controls-title {
+      background-color: #ffccf3;
+      color: #141f1f;
+      text-shadow: 2px 2px #ff66d9;
+      padding: 29px;
+      text-transform: uppercase;
+      font-size: 33px;
+      border: 10px solid #330026;
+      text-align: center;
+      height: 35%; }
     body .controls .controls_panel {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-width: 80%;
+      max-width: 33%;
+      height: 25%;
       background-color: #52527a; }
       body .controls .controls_panel .button {
         width: 130px;
         height: auto;
         text-decoration: none;
-        margin: 15px;
+        margin: 7.5px;
         background-color: #ffccf3;
         color: #330026;
         text-shadow: 3px 1px #ffe066;
         text-align: center;
-        padding: 25px;
-        font-size: 35px;
+        padding: 7.5px;
+        font-size: 25px;
         font-weight: 800;
+        box-shadow: 5px 10px #330026;
         border: none;
         border-radius: 15px;
         transition: 1s linear; }
         body .controls .controls_panel .button:hover {
           color: #ffccf3;
           text-shadow: none;
-          background-color: #330026; }
+          background-color: #330026;
+          box-shadow: 5px 10px #b3cccc; }
   body .stopwatch {
-    max-width: 33%;
-    border: 10px solid #141f1f;
+    width: 66%;
+    border-right: 25px solid #141f1f;
+    border-left: 25px solid #141f1f;
+    border-top: 10px solid #141f1f;
+    border-bottom: 10px solid #141f1f;
     text-shadow: 2px 2px #ff66d9;
     text-transform: uppercase;
     margin: 0 auto;
-    padding: 25px;
-    background-color: #b3cccc;
+    padding: 15px;
+    background-color: #ccc;
+    background-image: radial-gradient(#b3cccc, #ffccf3, #330026);
     color: #141f1f;
-    font-size: 35px;
-    font-weight: 600;
-    text-align: center; }
-  body .table_results {
-    margin: 25px auto;
-    max-width: 50%;
-    background-color: #ffccf3;
-    color: #330026;
-    border: 10px solid #330026;
     text-align: center;
-    font-size: 600;
-    text-transform: capitalize;
-    text-shadow: 3px 1px #ffe066;
-    padding: 25px; }
-  body .results {
-    list-style-type: none;
+    transition: 1s linear;
+    font-size: 35px;
+    font-weight: 600; }
+    body .stopwatch .stopped {
+      font-size: 35px;
+      font-weight: 600; }
+    body .stopwatch .on-run {
+      transform: scale(1.5); }
+  body .results-common {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    margin: 25px; }
-    body .results li {
-      min-width: 33%;
-      margin-right: 40px;
-      margin-bottom: 10px;
-      font-size: 25px;
-      font-weight: 600;
-      color: #330026;
-      background-color: #b3cccc;
-      border: 10px solid #330026;
-      text-align: center;
-      text-shadow: 3px 1px #ffe066;
-      padding: 15px; }
-      body .results li span {
-        font-size: 25px;
-        font-weight: 800;
-        color: #3d5c5c;
-        text-shadow: 2px 2px #ffccf3;
-        padding: 10px; }
-      body .results li button {
-        padding: 10px;
-        font-size: 15px;
-        font-weight: 800;
-        color: #ffccf3;
+    justify-content: center; }
+    body .results-common .results-common_list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      body .results-common .results-common_list .table_results, body .results-common .results-common_list .table_sorted-results {
+        width: 180px;
+        background-color: #ffccf3;
+        color: #330026;
+        border: 10px solid #330026;
         text-align: center;
-        text-shadow: none;
-        background-color: #330026;
-        transition: 1s linear; }
-        body .results li button:hover {
+        font-weight: 600;
+        font-size: 24px;
+        text-transform: capitalize;
+        text-shadow: 3px 1px #ffe066;
+        padding: 10px;
+        margin: 0; }
+      body .results-common .results-common_list .results, body .results-common .results-common_list .sorted-results {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 40px 0 0; }
+        body .results-common .results-common_list .results li, body .results-common .results-common_list .sorted-results li {
+          width: 180px;
+          font-size: 18px;
+          font-weight: 600;
           color: #330026;
+          background-color: #b3cccc;
+          border-left: 5px solid #330026;
+          border-top: none;
+          border-right: 5px solid #330026;
+          border-bottom: 5px solid #330026;
+          text-align: center;
           text-shadow: 3px 1px #ffe066;
-          background-color: #ffccf3; }
+          padding: 5px; }
+          body .results-common .results-common_list .results li span, body .results-common .results-common_list .sorted-results li span {
+            font-size: 18px;
+            font-weight: 800;
+            color: #141f1f;
+            text-shadow: 2px 2px #ffccf3;
+            padding: 5px; }
+          body .results-common .results-common_list .results li button, body .results-common .results-common_list .sorted-results li button {
+            padding: 5px;
+            font-size: 10px;
+            font-weight: 800;
+            color: #ffccf3;
+            text-align: center;
+            text-shadow: none;
+            background-color: #330026;
+            transition: 1s linear; }
+            body .results-common .results-common_list .results li button:hover, body .results-common .results-common_list .sorted-results li button:hover {
+              color: #330026;
+              text-shadow: 3px 1px #ffe066;
+              background-color: #ffccf3; }
