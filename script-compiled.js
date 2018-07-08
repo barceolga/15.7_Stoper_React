@@ -106,33 +106,37 @@ var Stopwatch = function (_React$Component) {
         myValue: 60000 * _this.state.times.minutes + 1000 * _this.state.times.seconds + 10 * _this.state.times.miliseconds
       };
       _this.setState({ list: [].concat(_toConsumableArray(_this.state.list), [newResult]) });
-      _this.sortResults();
     };
 
     _this.clearResults = function () {
       _this.setState({
-        list: []
+        list: [],
+        finalList: []
       });
     };
 
     _this.sortResults = function () {
-      var newResult = {
-        id: _this.state.list.length,
-        result: _this.format(),
-        myValue: 60000 * _this.state.times.minutes + 1000 * _this.state.times.seconds + 10 * _this.state.times.miliseconds
-      };
-      var list = [].concat(_toConsumableArray(_this.state.list), [newResult]);
-      var finalList = list.sort(function (a, b) {
+      var myList = [].concat(_toConsumableArray(_this.state.list));
+      console.log(myList);
+      var sortedList = myList.sort(function (a, b) {
         return a.myValue > b.myValue ? 1 : b.myValue > a.myValue ? -1 : 0;
       });
       _this.setState({
-        list: finalList
+        finalList: sortedList
       });
     };
 
     _this.deleteResultWithId = function (id) {
       _this.setState({
         list: _this.state.list.filter(function (ele) {
+          return ele.id !== id;
+        })
+      });
+    };
+
+    _this.deleteSortedResultWithId = function (id) {
+      _this.setState({
+        finalList: _this.state.finalList.filter(function (ele) {
           return ele.id !== id;
         })
       });
@@ -149,6 +153,11 @@ var Stopwatch = function (_React$Component) {
             'nav',
             { className: 'controls' },
             React.createElement(
+              'h1',
+              { className: 'controls-title' },
+              'Stopwatch'
+            ),
+            React.createElement(
               'div',
               { className: 'controls_panel' },
               React.createElement(
@@ -164,7 +173,11 @@ var Stopwatch = function (_React$Component) {
                     return _this.stop();
                   } },
                 'Stop'
-              ),
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'controls_panel' },
               React.createElement(
                 'a',
                 { href: '#', className: 'button', id: 'reset', onClick: function onClick() {
@@ -178,24 +191,53 @@ var Stopwatch = function (_React$Component) {
                     return _this.addResult();
                   } },
                 'Save'
-              ),
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'controls_panel' },
               React.createElement(
                 'a',
                 { href: '#', className: 'button', id: 'clear', onClick: function onClick() {
                     return _this.clearResults();
                   } },
-                'Clear'
+                'Remove'
+              ),
+              React.createElement(
+                'a',
+                { href: '#', className: 'button', id: 'none', onClick: function onClick() {
+                    return _this.sortResults();
+                  } },
+                'Classify'
               )
             )
           ),
-          React.createElement(Display, { time: _this.format() })
+          React.createElement(Display, { time: _this.format(), running: _this.state.running })
         ),
         React.createElement(
-          'h1',
-          { className: 'table_results' },
-          'Table of results'
-        ),
-        React.createElement(Results, { list: _this.state.list, className: 'results', deleteResultWithId: _this.deleteResultWithId })
+          'div',
+          { className: 'results-common' },
+          React.createElement(
+            'div',
+            { className: 'results-common_list' },
+            React.createElement(
+              'h1',
+              { className: 'table_results' },
+              'Results'
+            ),
+            React.createElement(Results, { list: _this.state.list, className: 'results', deleteResultWithId: _this.deleteResultWithId })
+          ),
+          React.createElement(
+            'div',
+            { className: 'results-common_list' },
+            React.createElement(
+              'h1',
+              { className: 'table_sorted-results' },
+              'Classification'
+            ),
+            React.createElement(SortedResults, { finalList: _this.state.finalList, className: 'sorted-results', deleteSortedResultWithId: _this.deleteSortedResultWithId })
+          )
+        )
       );
     };
 
@@ -206,8 +248,8 @@ var Stopwatch = function (_React$Component) {
         seconds: 0,
         miliseconds: 0
       },
-      list: []
-      //newList: []
+      list: [],
+      finalList: []
     };
     return _this;
   }
@@ -221,20 +263,22 @@ var Display = function (_React$Component2) {
   function Display(props) {
     _classCallCheck(this, Display);
 
-    return _possibleConstructorReturn(this, (Display.__proto__ || Object.getPrototypeOf(Display)).call(this, props));
-  }
+    var _this2 = _possibleConstructorReturn(this, (Display.__proto__ || Object.getPrototypeOf(Display)).call(this, props));
 
-  _createClass(Display, [{
-    key: 'render',
-    value: function render() {
+    _this2.render = function () {
       return React.createElement(
         'div',
-        { className: 'stopwatch' },
+        { className: 'stopwatch ' + (_this2.state.running === true ? 'on-run' : 'stopped') },
         ' ',
-        this.props.time
+        _this2.props.time
       );
-    }
-  }]);
+    };
+
+    _this2.state = {
+      running: false
+    };
+    return _this2;
+  }
 
   return Display;
 }(React.Component);
@@ -249,13 +293,12 @@ var Results = function (_React$Component3) {
   function Results(props) {
     _classCallCheck(this, Results);
 
-    var _this3 = _possibleConstructorReturn(this, (Results.__proto__ || Object.getPrototypeOf(Results)).call(this));
+    var _this3 = _possibleConstructorReturn(this, (Results.__proto__ || Object.getPrototypeOf(Results)).call(this, props));
 
     _this3.state = {
       running: false,
       list: []
     };
-    //this.props.list.deleteResultWithId(ele.id);
     return _this3;
   }
 
@@ -268,7 +311,7 @@ var Results = function (_React$Component3) {
         return React.createElement(
           'li',
           { key: ele.id },
-          'Result: ',
+          'Score: ',
           React.createElement(
             'span',
             null,
@@ -279,7 +322,7 @@ var Results = function (_React$Component3) {
             { className: 'button', onClick: function onClick() {
                 return _this4.props.deleteResultWithId(ele.id);
               } },
-            'Delete'
+            'X'
           )
         );
       });
@@ -296,6 +339,60 @@ var Results = function (_React$Component3) {
 
 Results.propTypes = {
   list: React.PropTypes.array.isRequired
+};
+
+var SortedResults = function (_React$Component4) {
+  _inherits(SortedResults, _React$Component4);
+
+  function SortedResults(props) {
+    _classCallCheck(this, SortedResults);
+
+    var _this5 = _possibleConstructorReturn(this, (SortedResults.__proto__ || Object.getPrototypeOf(SortedResults)).call(this));
+
+    _this5.state = {
+      running: false,
+      finalList: []
+    };
+    return _this5;
+  }
+
+  _createClass(SortedResults, [{
+    key: 'render',
+    value: function render() {
+      var _this6 = this;
+
+      var sortedResults = this.props.finalList.map(function (ele) {
+        return React.createElement(
+          'li',
+          { key: ele.id },
+          'Mark: ',
+          React.createElement(
+            'span',
+            null,
+            ele.result
+          ),
+          React.createElement(
+            'button',
+            { className: 'button', onClick: function onClick() {
+                return _this6.props.deleteSortedResultWithId(ele.id);
+              } },
+            'X'
+          )
+        );
+      });
+      return React.createElement(
+        'ul',
+        { className: 'sorted-results' },
+        sortedResults
+      );
+    }
+  }]);
+
+  return SortedResults;
+}(React.Component);
+
+SortedResults.propTypes = {
+  finalList: React.PropTypes.array.isRequired
 };
 
 
