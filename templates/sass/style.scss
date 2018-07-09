@@ -2,182 +2,217 @@
   box-sizing: border-box;
 }
 $pale-rose: #ffccf3;
+$dark-rose: #990075;
 $deep-violet: #330026;
 $honey-yellow: #ffe066;
 $steel-blue: #b3cccc;
 $dark-steel-blue: #141f1f;
+$super-deep-violet: #1a0013;
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  background-color: $honey-yellow;
-  background-image: url("Running_1.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-origin: content-box;
   position: relative;
 
-  .controls {
+  .app-content:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  background-image: url("Running_1.jpg");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  -webkit-filter: sepia(20%);
+  -moz-filter: sepia(20%);
+  -o-filter: sepia(20%);
+  -ms-filter: sepia(20%);
+  filter: sepia(20%);
+  -webkit-filter: brigthness(150%);
+  -moz-filter: brigthness(150%);
+  -o-filter: brigthness(1520%);
+  -ms-filter: brigthness(150%);
+  filter: brigthness(150%);
+}
+  .app-content {
+    position: relative;
+    overflow: auto;
+    z-index: 9999;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-    height: 35%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
 
-    .controls-title {
-      background-color: $pale-rose;
-      color: $dark-steel-blue;
-      text-shadow: 2px 2px #ff66d9;
-      padding: 29px;
-      text-transform: uppercase;
-      font-size: 33px;
-      border: 10px solid $deep-violet;
-      text-align: center;
-      height: 35%;
-    }
-
-    .controls_panel {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      max-width: 33%;
-      height: 25%;
-      background-color: #52527a;
-
-      .button {
-        width: 130px;
-        height: auto;
-        text-decoration: none;
-        margin: 7.5px;
-        background-color: $pale-rose;
-        color: $deep-violet;
-        text-shadow: 3px 1px $honey-yellow;
-        text-align: center;
-        padding: 7.5px;
-        font-size: 25px;
-        font-weight: 800;
-        box-shadow: 5px 10px  $deep-violet;
-        border: none;
-        border-radius: 15px;
-        transition: 1s linear;
-        &:hover{
-          color: $pale-rose;
-          text-shadow: none;
-          background-color: $deep-violet;
-          box-shadow: 5px 10px  $steel-blue;
-        }
-      }
-    }
-  }
-  .stopwatch {
-    width: 66%;
-    border-right: 25px solid $dark-steel-blue;
-    border-left: 25px solid $dark-steel-blue;
-    border-top: 10px solid $dark-steel-blue;
-    border-bottom: 10px solid $dark-steel-blue;
-    text-shadow: 2px 2px #ff66d9;
-    text-transform: uppercase;
-    margin: 0 auto;
-    padding: 15px;
-    background-color: #ccc;
-    background-image: radial-gradient($steel-blue, $pale-rose, $deep-violet);
-    color: $dark-steel-blue;
-    text-align: center;
-    transition: 1s linear;
-    font-size: 35px;
-    font-weight: 600;
-    .stopped {
-    font-size: 35px;
-    font-weight: 600;
-    }
-    .on-run {
-      transform: scale(1.5);
-    }
-  }
-
-  .results-common {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-
-      .results-common_list {
+      .controls {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
         justify-content: center;
+        align-items: center;
+        margin: 5px;
+        height: 35%;
 
-        .table_results {
-            width: 180px;
+        .controls-title {
+          background-color: $pale-rose;
+          color: $dark-steel-blue;
+          text-shadow: 2px 2px #ff66d9;
+          padding: 29px;
+          text-transform: uppercase;
+          font-size: 33px;
+          border-right: 15px solid $deep-violet;
+          border-left: 15px solid $deep-violet;
+          border-top: 5px solid $deep-violet;
+          border-bottom: 5px solid $deep-violet;
+          text-align: center;
+          height: 35%;
+        }
+
+        .controls_panel {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          max-width: 33%;
+          height: 25%;
+
+
+          .button {
+            width: 130px;
+            height: auto;
+            text-decoration: none;
+            margin: 7.5px;
             background-color: $pale-rose;
             color: $deep-violet;
-            border: 10px solid $deep-violet;
-            text-align: center;
-            font-weight: 600;
-            font-size: 24px;
-            text-transform: capitalize;
             text-shadow: 3px 1px $honey-yellow;
-            padding: 10px;
-            margin: 0;
+            text-align: center;
+            padding: 7.5px;
+            font-size: 25px;
+            font-weight: 800;
+            box-shadow: 5px 10px  $super-deep-violet;
+            border: none;
+            border-radius: 15px;
+            transition: 1s linear;
+            &:hover{
+              color: $pale-rose;
+              text-shadow: none;
+              background-color: $deep-violet;
+              box-shadow: 5px 10px  $steel-blue;
+            }
+          }
         }
+      }
+      .stopwatch {
+        width: 66%;
+        border-right: 15px solid $dark-steel-blue;
+        border-left: 15px solid $dark-steel-blue;
+        border-top: 5px solid $dark-steel-blue;
+        border-bottom: 5px solid $dark-steel-blue;
+        text-shadow: 2px 2px #ff66d9;
+        text-transform: uppercase;
+        margin: 0 auto;
+        padding: 15px;
+        background-color: #ccc;
+        background-image: radial-gradient($steel-blue 50%, $dark-steel-blue);
+        color: $dark-steel-blue;
+        text-align: center;
+        transition: 1s linear;
+        font-size: 35px;
+        font-weight: 600;
+        .stopped {
+        font-size: 35px;
+        font-weight: 600;
+        }
+        .on-run {
+          transform: scale(1.5);
+        }
+      }
 
-        .table_sorted-results {
-          @extend .table_results;
-        }
-        .results {
-            list-style-type: none;
+      .results-common {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+
+          .results-common_list {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 0 40px 0 0;
-            li {
-                width: 180px;
-                font-size: 18px;
-                font-weight: 600;
+            margin-top: 25px;
+
+            .table_results {
+                width: 230px;
+                background-color: $pale-rose;
                 color: $deep-violet;
-                background-color: $steel-blue;
-                border-left: 5px solid $deep-violet;
-                border-top: none;
-                border-right: 5px solid $deep-violet;
+                border-right: 15px solid $deep-violet;
+                border-left: 15px solid $deep-violet;
+                border-top: 5px solid $deep-violet;
                 border-bottom: 5px solid $deep-violet;
                 text-align: center;
+                font-weight: 600;
+                font-size: 24px;
+                text-transform: capitalize;
                 text-shadow: 3px 1px $honey-yellow;
-                padding: 5px;
-              span {
-                  font-size: 18px;
-                  font-weight: 800;
-                  color: $dark-steel-blue;;
-                  text-shadow: 2px 2px $pale-rose;
-                  padding: 5px;
+                padding: 10px;
+                margin: 0 5px 00;
             }
-              button {
-                  padding: 5px;
-                  font-size: 10px;
-                  font-weight: 800;
-                  color:  $pale-rose;
-                  text-align: center;
-                  text-shadow: none;
-                  background-color: $deep-violet;
-                transition: 1s linear;
-                  &:hover{
+
+            .table_sorted-results {
+              @extend .table_results;
+            }
+            .results {
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0 40px 0 0;
+                li {
+                    width: 200px;
+                    font-size: 18px;
+                    font-weight: 600;
                     color: $deep-violet;
+                    background-color: $steel-blue;
+                    border-left: 2.5px solid $deep-violet;
+                    border-top: none;
+                    border-right: 2.5px solid $deep-violet;
+                    border-bottom: 2.5px solid $deep-violet;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
                     text-shadow: 3px 1px $honey-yellow;
-                    background-color: $pale-rose;
+                    padding: 5px;
+                  span {
+                      font-size: 18px;
+                      font-weight: 800;
+                      color: $dark-steel-blue;;
+                      text-shadow: 2px 2px $pale-rose;
+                      padding: 5px;
+                }
+                  button {
+                      padding: 3px;
+                      font-size: 14px;
+                      font-weight: 900;
+                      color:  $pale-rose;
+                      text-align: center;
+                      text-shadow: none;
+                      text-transform: uppercase;
+                      background-color: $deep-violet;
+                    transition: 1s linear;
+                      &:hover{
+                        color: $deep-violet;
+                        text-shadow: 3px 1px $honey-yellow;
+                        background-color: $pale-rose;
+                  }
+                }
               }
             }
+            .sorted-results {
+              @extend .results;
+            }
           }
-        }
-        .sorted-results {
-          @extend .results;
-        }
-      }
 
+      }
   }
 
 }
