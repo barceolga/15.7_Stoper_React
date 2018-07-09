@@ -156,11 +156,13 @@ class Stopwatch extends React.Component {
             <div className={'results-common'}>
                 <div className={'results-common_list'}>
                     <h1 className={'table_results'}>Results</h1>
-                    <Results list={this.state.list} className = {'results'} deleteResultWithId={this.deleteResultWithId}></Results>
+                    <Results list={this.state.list} className = {'results'} deleteResultWithId={this.deleteResultWithId}>
+                    </Results>
                 </div>
                 <div className={'results-common_list'}>
                     <h1 className={'table_sorted-results'}>Classification</h1>
-                    <SortedResults finalList={this.state.finalList} className = {'sorted-results'} deleteSortedResultWithId={this.deleteSortedResultWithId}></SortedResults>
+                    <SortedResults finalList={this.state.finalList} className = {'sorted-results'} deleteSortedResultWithId={this.deleteSortedResultWithId}>
+                    </SortedResults>
                 </div>
             </div>
           </div>
@@ -206,7 +208,7 @@ class Results extends React.Component {
           return (
             <li key={ele.id}>
                       Score: <span>{ele.result}</span>
-                      <button className = {'button'} onClick = {() => this.props.deleteResultWithId(ele.id)}>X</button>
+                      <button className = {'button'} onClick = {() => this.props.deleteResultWithId(ele.id)}>x</button>
             </li>
           );
 
