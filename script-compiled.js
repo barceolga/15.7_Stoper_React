@@ -322,7 +322,7 @@ var Results = function (_React$Component3) {
             { className: 'button', onClick: function onClick() {
                 return _this4.props.deleteResultWithId(ele.id);
               } },
-            'X'
+            'x'
           )
         );
       });
