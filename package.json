@@ -4,8 +4,9 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "start": "babel script.js --watch --out-file script-compiled.js",
+    "start": "nodemon script.js",
     "sass:watch": "node-sass ./templates/sass/ -wo ./templates/css/",
+    "serve": "http-server ./ -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,9 +17,12 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
-    "node-sass": "^4.9.0"
+    "http-serve": "^1.0.1",
+    "node-sass": "^4.9.0",
+    "nodemon": "^1.18.1"
   },
   "dependencies": {
-    "hoek": "^5.0.3"
+    "hoek": "^5.0.3",
+    "styled-components": "^3.3.3"
   }
 }
