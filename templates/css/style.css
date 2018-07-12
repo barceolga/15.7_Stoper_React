@@ -11,20 +11,9 @@ body {
     right: 0;
     z-index: -1;
     display: block;
-    background-image: url("Running_1.jpg");
+    background-image: url("Background_1.png");
     background-size: cover;
-    height: 100%;
-    width: 100%;
-    -webkit-filter: sepia(20%);
-    -moz-filter: sepia(20%);
-    -o-filter: sepia(20%);
-    -ms-filter: sepia(20%);
-    filter: sepia(20%);
-    -webkit-filter: brigthness(150%);
-    -moz-filter: brigthness(150%);
-    -o-filter: brigthness(1520%);
-    -ms-filter: brigthness(150%);
-    filter: brigthness(150%); }
+    height: 100%; }
   body .app-content {
     position: relative;
     overflow: auto;
@@ -32,7 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-end; }
+    align-items: center; }
     body .app-content .controls {
       display: flex;
       flex-direction: row;
@@ -41,16 +30,12 @@ body {
       margin: 5px;
       height: 35%; }
       body .app-content .controls .controls-title {
-        background-color: #ffccf3;
-        color: #141f1f;
-        text-shadow: 2px 2px #ff66d9;
+        background-color: #283e3e;
+        color: #4dffff;
         padding: 29px;
         text-transform: uppercase;
         font-size: 33px;
-        border-right: 15px solid #330026;
-        border-left: 15px solid #330026;
-        border-top: 5px solid #330026;
-        border-bottom: 5px solid #330026;
+        box-shadow: 5px 10px #1a0013;
         text-align: center;
         height: 35%; }
       body .app-content .controls .controls_panel {
@@ -65,9 +50,8 @@ body {
           height: auto;
           text-decoration: none;
           margin: 7.5px;
-          background-color: #ffccf3;
-          color: #330026;
-          text-shadow: 3px 1px #ffe066;
+          background-color: #4d0039;
+          color: #4dffff;
           text-align: center;
           padding: 7.5px;
           font-size: 25px;
@@ -77,37 +61,107 @@ body {
           border-radius: 15px;
           transition: 1s linear; }
           body .app-content .controls .controls_panel .button:hover {
-            color: #ffccf3;
-            text-shadow: none;
-            background-color: #330026;
-            box-shadow: 5px 10px #b3cccc; }
-    body .app-content .stopwatch {
-      width: 66%;
-      border-right: 15px solid #141f1f;
-      border-left: 15px solid #141f1f;
-      border-top: 5px solid #141f1f;
-      border-bottom: 5px solid #141f1f;
-      text-shadow: 2px 2px #ff66d9;
-      text-transform: uppercase;
-      margin: 0 auto;
-      padding: 15px;
-      background-color: #ccc;
-      background-image: radial-gradient(#b3cccc 50%, #141f1f);
-      color: #141f1f;
-      text-align: center;
-      transition: 1s linear;
-      font-size: 35px;
-      font-weight: 600; }
-      body .app-content .stopwatch .stopped {
+            color: #4d0039;
+            background-color: #fff;
+            box-shadow: 5px 10px #283e3e; }
+    body .app-content .stopwatch-common {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      body .app-content .stopwatch-common .stopwatch {
+        width: 66%;
+        border-right: 15px solid #4d0039;
+        border-left: 15px solid #4d0039;
+        border-top: 5px solid #283e3e;
+        border-bottom: 5px solid #283e3e;
+        text-transform: uppercase;
+        box-shadow: 5px 10px #1a0013;
+        margin: 0 auto;
+        padding: 15px;
+        background-color: #ccc;
+        background-image: radial-gradient(#fff 20%, #b3cccc 30%, #283e3e);
+        color: #283e3e;
+        text-align: center;
+        transition: 1s linear;
         font-size: 35px;
         font-weight: 600; }
-      body .app-content .stopwatch .on-run {
-        transform: scale(1.5); }
+        body .app-content .stopwatch-common .stopwatch .stopped {
+          font-size: 35px;
+          font-weight: 600; }
+        body .app-content .stopwatch-common .stopwatch .on-run {
+          color: #4d0039;
+          transform: scale(1.25); }
+      body .app-content .stopwatch-common .decorative {
+        width: 60px;
+        height: 60px;
+        transform: rotate(45deg);
+        border: 10px solid #283e3e;
+        background-color: #4d0039;
+        box-shadow: 10px 5px #1a0013; }
     body .app-content .results-common {
       display: flex;
       flex-direction: row;
-      align-items: center;
-      justify-content: center; }
+      align-items: flex-start;
+      justify-content: flex-start;
+      position: relative; }
+      body .app-content .results-common .results-animation {
+        position: relative;
+        left: -100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 100px 25px 0 0; }
+        body .app-content .results-common .results-animation .results-animation_head {
+          width: 40px;
+          height: 40px;
+          border: 2px solid #fff;
+          border-radius: 30px;
+          background-color: #4d0039;
+          margin-right: 10px; }
+        body .app-content .results-common .results-animation .results-animation_body {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          position: relative; }
+          body .app-content .results-common .results-animation .results-animation_body .results-animation_left-arm, body .app-content .results-common .results-animation .results-animation_body .results-animation_right-arm {
+            width: 20px;
+            height: 66px;
+            transform: rotate(30deg);
+            border: 2px solid #fff;
+            border-radius: 15px;
+            background-color: #4d0039;
+            margin-right: 10px;
+            position: relative;
+            top: -10px; }
+          body .app-content .results-common .results-animation .results-animation_body .results-animation_torso {
+            width: 60px;
+            height: 80px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            background-color: #4d0039; }
+          body .app-content .results-common .results-animation .results-animation_body .results-animation_right-arm {
+            transform: rotate(-30deg);
+            margin-left: 10px; }
+        body .app-content .results-common .results-animation .results-animation_legs {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          position: relative; }
+          body .app-content .results-common .results-animation .results-animation_legs .results-animation_left-leg, body .app-content .results-common .results-animation .results-animation_legs .results-animation_right-leg {
+            width: 25px;
+            height: 80px;
+            border: 2px solid #fff;
+            border-radius: 15px;
+            background-color: #4d0039;
+            margin-right: 7.5px;
+            margin-left: none; }
+          body .app-content .results-common .results-animation .results-animation_legs .results-animation_right-leg {
+            margin-left: 7.5px;
+            margin-right: none; }
       body .app-content .results-common .results-common_list {
         display: flex;
         flex-direction: column;
@@ -116,17 +170,12 @@ body {
         margin-top: 25px; }
         body .app-content .results-common .results-common_list .table_results, body .app-content .results-common .results-common_list .table_sorted-results {
           width: 230px;
-          background-color: #ffccf3;
-          color: #330026;
-          border-right: 15px solid #330026;
-          border-left: 15px solid #330026;
-          border-top: 5px solid #330026;
-          border-bottom: 5px solid #330026;
+          background-color: #4d0039;
+          color: #4dffff;
           text-align: center;
           font-weight: 600;
           font-size: 24px;
           text-transform: capitalize;
-          text-shadow: 3px 1px #ffe066;
           padding: 10px;
           margin: 0 5px 00; }
         body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
@@ -140,34 +189,31 @@ body {
             width: 200px;
             font-size: 18px;
             font-weight: 600;
-            color: #330026;
+            color: #4d0039;
             background-color: #b3cccc;
-            border-left: 2.5px solid #330026;
+            border-left: 2.5px solid #4d0039;
             border-top: none;
-            border-right: 2.5px solid #330026;
-            border-bottom: 2.5px solid #330026;
+            border-right: 2.5px solid #4d0039;
+            border-bottom: 2.5px solid #4d0039;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            text-shadow: 3px 1px #ffe066;
             padding: 5px; }
             body .app-content .results-common .results-common_list .results li span, body .app-content .results-common .results-common_list .sorted-results li span {
               font-size: 18px;
               font-weight: 800;
-              color: #141f1f;
-              text-shadow: 2px 2px #ffccf3;
+              color: #283e3e;
               padding: 5px; }
             body .app-content .results-common .results-common_list .results li button, body .app-content .results-common .results-common_list .sorted-results li button {
               padding: 3px;
               font-size: 14px;
               font-weight: 900;
-              color: #ffccf3;
+              color: #4d0039;
               text-align: center;
               text-shadow: none;
               text-transform: uppercase;
-              background-color: #330026;
+              background-color: #4dffff;
               transition: 1s linear; }
               body .app-content .results-common .results-common_list .results li button:hover, body .app-content .results-common .results-common_list .sorted-results li button:hover {
-                color: #330026;
-                text-shadow: 3px 1px #ffe066;
-                background-color: #ffccf3; }
+                color: #fff;
+                background-color: #4d0039; }
