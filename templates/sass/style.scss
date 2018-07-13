@@ -8,6 +8,32 @@ $steel-blue: #b3cccc;
 $dark-steel-blue: #283e3e;
 $super-deep-violet: #1a0013;
 
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
 body {
   position: relative;
 
@@ -105,13 +131,13 @@ body {
           transition: 1s linear;
           font-size: 35px;
           font-weight: 600;
-          .stopped {
+          &.stopped {
           font-size: 35px;
           font-weight: 600;
           }
-          .on-run {
+          &.on-run {
             color: $deep-violet;
-            transform: scale(1.25);
+            transform: scale(1.15);
           }
         }
 
@@ -140,6 +166,7 @@ body {
             align-items: center;
             justify-content: center;
             margin: 100px 25px 0 0;
+
             .results-animation_head {
               width: 40px;
               height: 40px;
@@ -147,7 +174,41 @@ body {
               border-radius: 30px;
               background-color: $deep-violet;
               margin-right: 10px;
+              transition: 1s ease-in-out;
+
+
+              &.stopped {
+                animation: none;
+                transform: none;
+              }
+              &.on-run {
+                  background-color: $dark-steel-blue;
+                  transform: translate(0px, -20px);
+                  @include animation ('moving_head 10s 5');
+                 }
+              @include keyframes (moving_head) {
+                  0%   {
+                    top: Opx;
+                    left: 0px;
+                  }
+                  25%  {
+                    top: 1Opx;
+                    left: 0px;
+                  }
+                  50%  {
+                    top: 2Opx;
+                    left: 0px;
+                  }
+                  75%  {
+                    top: 1Opx;
+                    left: 0px;
+                  }
+                  100% {
+                    top:Opx; left:0px;
+                  }
+                }
             }
+
             .results-animation_body {
               display: flex;
               flex-direction: row;
@@ -164,6 +225,15 @@ body {
                 margin-right:10px;
                 position: relative;
                 top: -10px;
+                transition: 1s ease-in-out;
+                &.stopped {
+                  transform: rotate(30deg);
+                }
+                &.on-run {
+                  background-color: $dark-steel-blue;
+                  transform: rotate(-30deg);
+                  transform: translate(0px, -20px);
+                }
               }
               .results-animation_torso {
                 width: 60px;
@@ -171,11 +241,26 @@ body {
                 border: 2px solid #fff;
                 border-radius: 10px;
                 background-color: $deep-violet;
+                transition: 1s ease-in-out;
+                &.stopped {
+                  transform: none;
+                }
+                &.on-run {
+                  background-color: $dark-steel-blue;
+                  transform: translate(0px, -20px);
+                }
               }
               .results-animation_right-arm {
                 @extend .results-animation_left-arm;
                 transform: rotate(-30deg);
                 margin-left: 10px;
+                transition: 1s ease-in-out;
+                &.stopped {
+                  transform: rotate(-30deg);
+                }
+                &.on-run {
+                  transform: translate(0px, -20px);
+                }
               }
             }
               .results-animation_legs {
@@ -184,7 +269,7 @@ body {
                 align-items: center;
                 justify-content: space-between;
                 position: relative;
-                .results-animation_left-leg {
+              .results-animation_left-leg {
                   width: 25px;
                   height: 80px;
                   border: 2px solid #fff;
@@ -192,11 +277,27 @@ body {
                   background-color: $deep-violet;
                   margin-right: 7.5px;
                   margin-left: none;
+                  transition: 1s ease-in-out;
+                  &.stopped {
+                    transform: none;
+                  }
+                  &.on-run {
+                    background-color: $dark-steel-blue;
+                    transform: translate(0px, -20px);
+                  }
                 }
-                .results-animation_right-leg{
+                .results-animation_right-leg {
                   @extend .results-animation_left-leg;
                   margin-left: 7.5px;
                   margin-right: none;
+                  transition: 1s ease-in-out;
+                  &.stopped {
+                    transform: none;
+                  }
+                  &.on-run {
+                    transform: translate(0px, -20px);
+                    background-color: $dark-steel-blue;
+                  }
                 }
               }
           }

@@ -86,12 +86,12 @@ body {
         transition: 1s linear;
         font-size: 35px;
         font-weight: 600; }
-        body .app-content .stopwatch-common .stopwatch .stopped {
+        body .app-content .stopwatch-common .stopwatch.stopped {
           font-size: 35px;
           font-weight: 600; }
-        body .app-content .stopwatch-common .stopwatch .on-run {
+        body .app-content .stopwatch-common .stopwatch.on-run {
           color: #4d0039;
-          transform: scale(1.25); }
+          transform: scale(1.15); }
       body .app-content .stopwatch-common .decorative {
         width: 60px;
         height: 60px;
@@ -119,7 +119,104 @@ body {
           border: 2px solid #fff;
           border-radius: 30px;
           background-color: #4d0039;
-          margin-right: 10px; }
+          margin-right: 10px;
+          transition: 1s ease-in-out; }
+          body .app-content .results-common .results-animation .results-animation_head.stopped {
+            animation: none;
+            transform: none; }
+          body .app-content .results-common .results-animation .results-animation_head.on-run {
+            background-color: #283e3e;
+            transform: translate(0px, -20px);
+            -webkit-animation: moving_head 10s 5;
+            -moz-animation: moving_head 10s 5;
+            -ms-animation: moving_head 10s 5;
+            -o-animation: moving_head 10s 5;
+            animation: moving_head 10s 5; }
+
+@-webkit-keyframes moving_head {
+  0% {
+    top: Opx;
+    left: 0px; }
+  25% {
+    top: 1Opx;
+    left: 0px; }
+  50% {
+    top: 2Opx;
+    left: 0px; }
+  75% {
+    top: 1Opx;
+    left: 0px; }
+  100% {
+    top: Opx;
+    left: 0px; } }
+
+@-moz-keyframes moving_head {
+  0% {
+    top: Opx;
+    left: 0px; }
+  25% {
+    top: 1Opx;
+    left: 0px; }
+  50% {
+    top: 2Opx;
+    left: 0px; }
+  75% {
+    top: 1Opx;
+    left: 0px; }
+  100% {
+    top: Opx;
+    left: 0px; } }
+
+@-ms-keyframes moving_head {
+  body .app-content .results-common .results-animation .results-animation_head 0% {
+    top: Opx;
+    left: 0px; }
+  body .app-content .results-common .results-animation .results-animation_head 25% {
+    top: 1Opx;
+    left: 0px; }
+  body .app-content .results-common .results-animation .results-animation_head 50% {
+    top: 2Opx;
+    left: 0px; }
+  body .app-content .results-common .results-animation .results-animation_head 75% {
+    top: 1Opx;
+    left: 0px; }
+  body .app-content .results-common .results-animation .results-animation_head 100% {
+    top: Opx;
+    left: 0px; } }
+
+@-o-keyframes moving_head {
+  0% {
+    top: Opx;
+    left: 0px; }
+  25% {
+    top: 1Opx;
+    left: 0px; }
+  50% {
+    top: 2Opx;
+    left: 0px; }
+  75% {
+    top: 1Opx;
+    left: 0px; }
+  100% {
+    top: Opx;
+    left: 0px; } }
+
+@keyframes moving_head {
+  0% {
+    top: Opx;
+    left: 0px; }
+  25% {
+    top: 1Opx;
+    left: 0px; }
+  50% {
+    top: 2Opx;
+    left: 0px; }
+  75% {
+    top: 1Opx;
+    left: 0px; }
+  100% {
+    top: Opx;
+    left: 0px; } }
         body .app-content .results-common .results-animation .results-animation_body {
           display: flex;
           flex-direction: row;
@@ -135,16 +232,34 @@ body {
             background-color: #4d0039;
             margin-right: 10px;
             position: relative;
-            top: -10px; }
+            top: -10px;
+            transition: 1s ease-in-out; }
+            body .app-content .results-common .results-animation .results-animation_body .results-animation_left-arm.stopped, body .app-content .results-common .results-animation .results-animation_body .stopped.results-animation_right-arm {
+              transform: rotate(30deg); }
+            body .app-content .results-common .results-animation .results-animation_body .results-animation_left-arm.on-run, body .app-content .results-common .results-animation .results-animation_body .on-run.results-animation_right-arm {
+              background-color: #283e3e;
+              transform: rotate(-30deg);
+              transform: translate(0px, -20px); }
           body .app-content .results-common .results-animation .results-animation_body .results-animation_torso {
             width: 60px;
             height: 80px;
             border: 2px solid #fff;
             border-radius: 10px;
-            background-color: #4d0039; }
+            background-color: #4d0039;
+            transition: 1s ease-in-out; }
+            body .app-content .results-common .results-animation .results-animation_body .results-animation_torso.stopped {
+              transform: none; }
+            body .app-content .results-common .results-animation .results-animation_body .results-animation_torso.on-run {
+              background-color: #283e3e;
+              transform: translate(0px, -20px); }
           body .app-content .results-common .results-animation .results-animation_body .results-animation_right-arm {
             transform: rotate(-30deg);
-            margin-left: 10px; }
+            margin-left: 10px;
+            transition: 1s ease-in-out; }
+            body .app-content .results-common .results-animation .results-animation_body .results-animation_right-arm.stopped {
+              transform: rotate(-30deg); }
+            body .app-content .results-common .results-animation .results-animation_body .results-animation_right-arm.on-run {
+              transform: translate(0px, -20px); }
         body .app-content .results-common .results-animation .results-animation_legs {
           display: flex;
           flex-direction: row;
@@ -158,10 +273,22 @@ body {
             border-radius: 15px;
             background-color: #4d0039;
             margin-right: 7.5px;
-            margin-left: none; }
+            margin-left: none;
+            transition: 1s ease-in-out; }
+            body .app-content .results-common .results-animation .results-animation_legs .results-animation_left-leg.stopped, body .app-content .results-common .results-animation .results-animation_legs .stopped.results-animation_right-leg {
+              transform: none; }
+            body .app-content .results-common .results-animation .results-animation_legs .results-animation_left-leg.on-run, body .app-content .results-common .results-animation .results-animation_legs .on-run.results-animation_right-leg {
+              background-color: #283e3e;
+              transform: translate(0px, -20px); }
           body .app-content .results-common .results-animation .results-animation_legs .results-animation_right-leg {
             margin-left: 7.5px;
-            margin-right: none; }
+            margin-right: none;
+            transition: 1s ease-in-out; }
+            body .app-content .results-common .results-animation .results-animation_legs .results-animation_right-leg.stopped {
+              transform: none; }
+            body .app-content .results-common .results-animation .results-animation_legs .results-animation_right-leg.on-run {
+              transform: translate(0px, -20px);
+              background-color: #283e3e; }
       body .app-content .results-common .results-common_list {
         display: flex;
         flex-direction: column;
