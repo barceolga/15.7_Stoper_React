@@ -174,6 +174,8 @@ class Stopwatch extends React.Component {
                             className = {'sorted-results'}
                             deleteSortedResultWithId={this.deleteSortedResultWithId}/>
                     </div>
+                    <Animation
+                      running={this.state.running}/>
               </div>
           </div>
         );
