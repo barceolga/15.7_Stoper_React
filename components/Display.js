@@ -11,9 +11,9 @@ class Display extends React.Component {
     render = () => {
           return(
             <div className={'stopwatch-common'}>
-              <div className={'decorative'}></div>
+              <div className={`decorative ${this.props.running===true?'on-run':'stopped'}`}></div>
               <div className ={`stopwatch ${this.props.running===true?'on-run':'stopped'}`} > {this.props.time}</div>
-              <div className={'decorative'}></div>
+              <div className={`decorative ${this.props.running===true?'on-run':'stopped'}`}></div>
             </div>
         );
     }
