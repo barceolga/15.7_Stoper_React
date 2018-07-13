@@ -1,9 +1,8 @@
 *{
   box-sizing: border-box;
 }
-$pale-blue: #4dffff;
-$plain-violet: #800060;
-$deep-violet: #4d0039;
+//$pale-blue: #80ffff;
+$deep-navy: #000066;
 $steel-blue: #b3cccc;
 $dark-steel-blue: #283e3e;
 $super-deep-violet: #1a0013;
@@ -60,26 +59,27 @@ body {
 
       .controls {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: 5px;
         height: 35%;
 
         .controls-title {
-          background-color: $dark-steel-blue;
-          color: $pale-blue;;
-          padding: 29px;
+          background-color: $steel-blue;
+          color: $deep-navy;
+          padding: 10px;
           text-transform: uppercase;
           font-size: 33px;
           box-shadow: 5px 10px  $super-deep-violet;
           text-align: center;
           height: 35%;
+          margin-bottom: 15px;
         }
 
         .controls_panel {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           justify-content: center;
           align-items: center;
           max-width: 33%;
@@ -91,10 +91,10 @@ body {
             height: auto;
             text-decoration: none;
             margin: 7.5px;
-            background-color: $deep-violet;
-            color: $pale-blue;
+            background-color: $deep-navy;
+            color: $steel-blue;
             text-align: center;
-            padding: 7.5px;
+            padding: 10px;
             font-size: 25px;
             font-weight: 800;
             box-shadow: 5px 10px  $super-deep-violet;
@@ -102,8 +102,8 @@ body {
             border-radius: 15px;
             transition: 1s linear;
             &:hover{
-              color: $deep-violet;;
-              background-color: #fff;
+              color: $deep-navy;;
+              background-color: $steel-blue;
               box-shadow: 5px 10px  $dark-steel-blue;
             }
           }
@@ -116,27 +116,26 @@ body {
         align-items: center;
         .stopwatch {
           width: 66%;
-          border-right: 15px solid $deep-violet;
-          border-left: 15px solid $deep-violet;
+          border-right: 15px solid $deep-navy;
+          border-left: 15px solid $deep-navy;
           border-top: 5px solid $dark-steel-blue;
           border-bottom: 5px solid $dark-steel-blue;
           text-transform: uppercase;
           box-shadow: 5px 10px  $super-deep-violet;
           margin: 0 auto;
-          padding: 15px;
+          padding: 15px 25px;
           background-color: #ccc;
-          background-image: radial-gradient(#fff 20%, $steel-blue 30%, $dark-steel-blue);
+          background-image: radial-gradient(#fff 20%, #e0ebeb 20%, $steel-blue 30%, $dark-steel-blue);
           color: $dark-steel-blue;
           text-align: center;
           transition: 1s linear;
           font-size: 35px;
           font-weight: 600;
           &.stopped {
-          font-size: 35px;
-          font-weight: 600;
+            transform: none;
           }
           &.on-run {
-            color: $deep-violet;
+            color: $deep-navy;
             transform: scale(1.15);
           }
         }
@@ -145,9 +144,19 @@ body {
           width: 60px;
           height: 60px;
           transform: rotate(45deg);
-          border: 10px solid $dark-steel-blue;
-          background-color:  $deep-violet;
+          border-top: 10px solid $steel-blue;
+          border-right: 10px solid $steel-blue;
+          border-bottom: 10px solid $dark-steel-blue;
+          border-left: 10px solid $dark-steel-blue;
+          background-color:  $deep-navy;
           box-shadow: 10px 5px  $super-deep-violet;
+          transition: 1s ease-in-out;
+          &.stopped {
+           transform: rotate(45deg);
+          }
+          &.on-run {
+            transform: rotate(315deg);
+          }
         }
       }
 
@@ -155,24 +164,23 @@ body {
           display: flex;
           flex-direction: row;
           align-items: flex-start;
-          justify-content: flex-start;
+          justify-content: center;
           position: relative;
 
           .results-animation {
-            position: relative;
-            left: -100px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 100px 25px 0 0;
+            margin: 100px 0 0 0;
+            transform: scale(0.5);
 
             .results-animation_head {
               width: 40px;
               height: 40px;
-              border: 2px solid #fff;
+              border: 2px solid $steel-blue;
               border-radius: 30px;
-              background-color: $deep-violet;
+              background-color: $deep-navy;
               margin-right: 10px;
               transition: 1s ease-in-out;
 
@@ -219,9 +227,9 @@ body {
                 width: 20px;
                 height: 66px;
                 transform: rotate(30deg);
-                border: 2px solid #fff;
+                border: 2px solid $steel-blue;
                 border-radius: 15px;
-                background-color: $deep-violet;
+                background-color: $deep-navy;
                 margin-right:10px;
                 position: relative;
                 top: -10px;
@@ -238,9 +246,9 @@ body {
               .results-animation_torso {
                 width: 60px;
                 height: 80px;
-                border: 2px solid #fff;
+                border: 2px solid $steel-blue;
                 border-radius: 10px;
-                background-color: $deep-violet;
+                background-color: $deep-navy;
                 transition: 1s ease-in-out;
                 &.stopped {
                   transform: none;
@@ -272,9 +280,9 @@ body {
               .results-animation_left-leg {
                   width: 25px;
                   height: 80px;
-                  border: 2px solid #fff;
+                  border: 2px solid $steel-blue;
                   border-radius: 15px;
-                  background-color: $deep-violet;
+                  background-color: $deep-navy;
                   margin-right: 7.5px;
                   margin-left: none;
                   transition: 1s ease-in-out;
@@ -311,8 +319,8 @@ body {
 
             .table_results {
                 width: 230px;
-                background-color: $deep-violet;
-                color: $pale-blue;
+                background-color: $deep-navy;
+                color: $steel-blue;
                 text-align: center;
                 font-weight: 600;
                 font-size: 24px;
@@ -335,12 +343,12 @@ body {
                     width: 200px;
                     font-size: 18px;
                     font-weight: 600;
-                    color: $deep-violet;
+                    color: $deep-navy;
                     background-color: $steel-blue;
-                    border-left: 2.5px solid $deep-violet;
+                    border-left: 2.5px solid $deep-navy;
                     border-top: none;
-                    border-right: 2.5px solid $deep-violet;
-                    border-bottom: 2.5px solid $deep-violet;
+                    border-right: 2.5px solid $deep-navy;
+                    border-bottom: 2.5px solid $deep-navy;
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
@@ -355,15 +363,15 @@ body {
                       padding: 3px;
                       font-size: 14px;
                       font-weight: 900;
-                      color:  $deep-violet;
+                      color:  $deep-navy;
                       text-align: center;
                       text-shadow: none;
                       text-transform: uppercase;
-                      background-color: $pale-blue;
+                      background-color: $steel-blue;
                       transition: 1s linear;
                       &:hover{
-                        color: #fff;
-                        background-color: $deep-violet;
+                        color: $steel-blue;
+                        background-color: $deep-navy;
                   }
                 }
               }

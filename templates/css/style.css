@@ -24,23 +24,24 @@ body {
     align-items: center; }
     body .app-content .controls {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       margin: 5px;
       height: 35%; }
       body .app-content .controls .controls-title {
-        background-color: #283e3e;
-        color: #4dffff;
-        padding: 29px;
+        background-color: #b3cccc;
+        color: #000066;
+        padding: 10px;
         text-transform: uppercase;
         font-size: 33px;
         box-shadow: 5px 10px #1a0013;
         text-align: center;
-        height: 35%; }
+        height: 35%;
+        margin-bottom: 15px; }
       body .app-content .controls .controls_panel {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         max-width: 33%;
@@ -50,10 +51,10 @@ body {
           height: auto;
           text-decoration: none;
           margin: 7.5px;
-          background-color: #4d0039;
-          color: #4dffff;
+          background-color: #000066;
+          color: #b3cccc;
           text-align: center;
-          padding: 7.5px;
+          padding: 10px;
           font-size: 25px;
           font-weight: 800;
           box-shadow: 5px 10px #1a0013;
@@ -61,8 +62,8 @@ body {
           border-radius: 15px;
           transition: 1s linear; }
           body .app-content .controls .controls_panel .button:hover {
-            color: #4d0039;
-            background-color: #fff;
+            color: #000066;
+            background-color: #b3cccc;
             box-shadow: 5px 10px #283e3e; }
     body .app-content .stopwatch-common {
       display: flex;
@@ -71,54 +72,60 @@ body {
       align-items: center; }
       body .app-content .stopwatch-common .stopwatch {
         width: 66%;
-        border-right: 15px solid #4d0039;
-        border-left: 15px solid #4d0039;
+        border-right: 15px solid #000066;
+        border-left: 15px solid #000066;
         border-top: 5px solid #283e3e;
         border-bottom: 5px solid #283e3e;
         text-transform: uppercase;
         box-shadow: 5px 10px #1a0013;
         margin: 0 auto;
-        padding: 15px;
+        padding: 15px 25px;
         background-color: #ccc;
-        background-image: radial-gradient(#fff 20%, #b3cccc 30%, #283e3e);
+        background-image: radial-gradient(#fff 20%, #e0ebeb 20%, #b3cccc 30%, #283e3e);
         color: #283e3e;
         text-align: center;
         transition: 1s linear;
         font-size: 35px;
         font-weight: 600; }
         body .app-content .stopwatch-common .stopwatch.stopped {
-          font-size: 35px;
-          font-weight: 600; }
+          transform: none; }
         body .app-content .stopwatch-common .stopwatch.on-run {
-          color: #4d0039;
+          color: #000066;
           transform: scale(1.15); }
       body .app-content .stopwatch-common .decorative {
         width: 60px;
         height: 60px;
         transform: rotate(45deg);
-        border: 10px solid #283e3e;
-        background-color: #4d0039;
-        box-shadow: 10px 5px #1a0013; }
+        border-top: 10px solid #b3cccc;
+        border-right: 10px solid #b3cccc;
+        border-bottom: 10px solid #283e3e;
+        border-left: 10px solid #283e3e;
+        background-color: #000066;
+        box-shadow: 10px 5px #1a0013;
+        transition: 1s ease-in-out; }
+        body .app-content .stopwatch-common .decorative.stopped {
+          transform: rotate(45deg); }
+        body .app-content .stopwatch-common .decorative.on-run {
+          transform: rotate(315deg); }
     body .app-content .results-common {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
-      justify-content: flex-start;
+      justify-content: center;
       position: relative; }
       body .app-content .results-common .results-animation {
-        position: relative;
-        left: -100px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 100px 25px 0 0; }
+        margin: 100px 0 0 0;
+        transform: scale(0.5); }
         body .app-content .results-common .results-animation .results-animation_head {
           width: 40px;
           height: 40px;
-          border: 2px solid #fff;
+          border: 2px solid #b3cccc;
           border-radius: 30px;
-          background-color: #4d0039;
+          background-color: #000066;
           margin-right: 10px;
           transition: 1s ease-in-out; }
           body .app-content .results-common .results-animation .results-animation_head.stopped {
@@ -227,9 +234,9 @@ body {
             width: 20px;
             height: 66px;
             transform: rotate(30deg);
-            border: 2px solid #fff;
+            border: 2px solid #b3cccc;
             border-radius: 15px;
-            background-color: #4d0039;
+            background-color: #000066;
             margin-right: 10px;
             position: relative;
             top: -10px;
@@ -243,9 +250,9 @@ body {
           body .app-content .results-common .results-animation .results-animation_body .results-animation_torso {
             width: 60px;
             height: 80px;
-            border: 2px solid #fff;
+            border: 2px solid #b3cccc;
             border-radius: 10px;
-            background-color: #4d0039;
+            background-color: #000066;
             transition: 1s ease-in-out; }
             body .app-content .results-common .results-animation .results-animation_body .results-animation_torso.stopped {
               transform: none; }
@@ -269,9 +276,9 @@ body {
           body .app-content .results-common .results-animation .results-animation_legs .results-animation_left-leg, body .app-content .results-common .results-animation .results-animation_legs .results-animation_right-leg {
             width: 25px;
             height: 80px;
-            border: 2px solid #fff;
+            border: 2px solid #b3cccc;
             border-radius: 15px;
-            background-color: #4d0039;
+            background-color: #000066;
             margin-right: 7.5px;
             margin-left: none;
             transition: 1s ease-in-out; }
@@ -297,8 +304,8 @@ body {
         margin-top: 25px; }
         body .app-content .results-common .results-common_list .table_results, body .app-content .results-common .results-common_list .table_sorted-results {
           width: 230px;
-          background-color: #4d0039;
-          color: #4dffff;
+          background-color: #000066;
+          color: #b3cccc;
           text-align: center;
           font-weight: 600;
           font-size: 24px;
@@ -316,12 +323,12 @@ body {
             width: 200px;
             font-size: 18px;
             font-weight: 600;
-            color: #4d0039;
+            color: #000066;
             background-color: #b3cccc;
-            border-left: 2.5px solid #4d0039;
+            border-left: 2.5px solid #000066;
             border-top: none;
-            border-right: 2.5px solid #4d0039;
-            border-bottom: 2.5px solid #4d0039;
+            border-right: 2.5px solid #000066;
+            border-bottom: 2.5px solid #000066;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -335,12 +342,12 @@ body {
               padding: 3px;
               font-size: 14px;
               font-weight: 900;
-              color: #4d0039;
+              color: #000066;
               text-align: center;
               text-shadow: none;
               text-transform: uppercase;
-              background-color: #4dffff;
+              background-color: #b3cccc;
               transition: 1s linear; }
               body .app-content .results-common .results-common_list .results li button:hover, body .app-content .results-common .results-common_list .sorted-results li button:hover {
-                color: #fff;
-                background-color: #4d0039; }
+                color: #b3cccc;
+                background-color: #000066; }
