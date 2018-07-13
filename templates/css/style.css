@@ -342,12 +342,13 @@ body {
               padding: 3px;
               font-size: 14px;
               font-weight: 900;
-              color: #000066;
+              color: #b3cccc;
               text-align: center;
               text-shadow: none;
               text-transform: uppercase;
-              background-color: #b3cccc;
+              background-color: #000066;
+              cursor: pointer;
               transition: 1s linear; }
               body .app-content .results-common .results-common_list .results li button:hover, body .app-content .results-common .results-common_list .sorted-results li button:hover {
-                color: #b3cccc;
-                background-color: #000066; }
+                color: #283e3e;
+                background-color: #fff; }

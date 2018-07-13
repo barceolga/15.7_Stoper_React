@@ -363,15 +363,16 @@ body {
                       padding: 3px;
                       font-size: 14px;
                       font-weight: 900;
-                      color:  $deep-navy;
+                      color:  $steel-blue;
                       text-align: center;
                       text-shadow: none;
                       text-transform: uppercase;
-                      background-color: $steel-blue;
+                      background-color:  $deep-navy;
+                      cursor: pointer;
                       transition: 1s linear;
                       &:hover{
-                        color: $steel-blue;
-                        background-color: $deep-navy;
+                        color: $dark-steel-blue;
+                        background-color: #fff;
                   }
                 }
               }
