@@ -167,7 +167,7 @@ class Stopwatch extends React.Component {
                             className = {'results'} deleteResultWithId={this.deleteResultWithId}/>
                     </div>
                     <div className={'results-common_list'}>
-                          <h1 className={'table_sorted-results'}>Classification</h1>
+                          <h1 className={'table_sorted-results'}>Scores</h1>
                           <SortedResults
                             finalList={this.state.finalList}
                             running={this.state.running}
