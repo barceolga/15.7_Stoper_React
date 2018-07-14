@@ -1,7 +1,9 @@
 *{
   box-sizing: border-box;
 }
-//$pale-blue: #80ffff;
+@import url('https://fonts.googleapis.com/css?family=Graduate|IBM+Plex+Mono:700');
+$font-title: 'Graduate', cursive;
+$main-font: 'IBM Plex Mono', monospace;
 $deep-navy: #000066;
 $steel-blue: #b3cccc;
 $dark-steel-blue: #283e3e;
@@ -35,7 +37,6 @@ $super-deep-violet: #1a0013;
 
 body {
   position: relative;
-
   .app-content:before {
   content: "";
   position: fixed;
@@ -44,9 +45,11 @@ body {
   right: 0;
   z-index: -1;
   display: block;
-  background-image: url("Background_1.png");
+  background-image: url("Background_3.png");
   background-size: cover;
   height: 100%;
+  transform: rotate(180deg);
+  opacity: 0.80;
 }
   .app-content {
     position: relative;
@@ -56,7 +59,6 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
       .controls {
         display: flex;
         flex-direction: column;
@@ -64,19 +66,17 @@ body {
         align-items: center;
         margin: 5px;
         height: 35%;
-
         .controls-title {
-          background-color: $steel-blue;
-          color: $deep-navy;
+          color: $steel-blue;
           padding: 10px;
           text-transform: uppercase;
-          font-size: 33px;
-          box-shadow: 5px 10px  $super-deep-violet;
+          font-family: $font-title;
+          font-size: 45px;
           text-align: center;
+          text-shadow: 4px 4px $dark-steel-blue;
           height: 35%;
           margin-bottom: 15px;
         }
-
         .controls_panel {
           display: flex;
           flex-direction: row;
@@ -84,27 +84,26 @@ body {
           align-items: center;
           max-width: 33%;
           height: 25%;
-
-
-          .button {
-            width: 130px;
-            height: auto;
-            text-decoration: none;
+          .controls-button {
+            min-width: 50px;
+            height: 50px;
             margin: 7.5px;
-            background-color: $deep-navy;
-            color: $steel-blue;
-            text-align: center;
-            padding: 10px;
-            font-size: 25px;
-            font-weight: 800;
-            box-shadow: 5px 10px  $super-deep-violet;
+            background-color: $steel-blue;
+            color: $deep-navy;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: $main-font;
+            font-size: 20px;
+            font-weight: 900;
+            box-shadow: 5px 10px  $dark-steel-blue;
             border: none;
             border-radius: 15px;
             transition: 1s linear;
             &:hover{
-              color: $deep-navy;;
-              background-color: $steel-blue;
-              box-shadow: 5px 10px  $dark-steel-blue;
+              color: #fff;
+              background-color: $dark-steel-blue;
+              box-shadow: 5px 10px  $deep-navy;
             }
           }
         }
@@ -114,59 +113,78 @@ body {
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        margin-top: 25px;
         .stopwatch {
           width: 66%;
-          border-right: 15px solid $deep-navy;
-          border-left: 15px solid $deep-navy;
-          border-top: 5px solid $dark-steel-blue;
-          border-bottom: 5px solid $dark-steel-blue;
           text-transform: uppercase;
-          box-shadow: 5px 10px  $super-deep-violet;
+          text-align: center;
           margin: 0 auto;
           padding: 15px 25px;
-          background-color: #ccc;
-          background-image: radial-gradient(#fff 20%, #e0ebeb 20%, $steel-blue 30%, $dark-steel-blue);
-          color: $dark-steel-blue;
+          background-color: #000;
+          color: $steel-blue;
           text-align: center;
           transition: 1s linear;
+          font-family: $main-font;
           font-size: 35px;
           font-weight: 600;
+
           &.stopped {
             transform: none;
           }
           &.on-run {
-            color: $deep-navy;
-            transform: scale(1.15);
+            transform: scale(1.10);
+            font-weight: 800;
           }
         }
-
         .decorative {
-          width: 60px;
-          height: 60px;
-          transform: rotate(45deg);
-          border-top: 10px solid $steel-blue;
-          border-right: 10px solid $steel-blue;
-          border-bottom: 10px solid $dark-steel-blue;
-          border-left: 10px solid $dark-steel-blue;
-          background-color:  $deep-navy;
-          box-shadow: 10px 5px  $super-deep-violet;
-          transition: 1s ease-in-out;
-          &.stopped {
-           transform: rotate(45deg);
+            width: 60px;
+            height: 60px;
+            transform: rotate(45deg);
+            border-top: 10px solid $steel-blue;
+            border-right: 10px solid $steel-blue;
+            border-bottom: 10px solid $dark-steel-blue;
+            border-left: 10px solid $dark-steel-blue;
+            color:  $deep-navy;
+            box-shadow: 10px 5px  $super-deep-violet;
+            transition: 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            .fas.fa-clock {
+              transition: 2s ease-in-out;
+              &.stopped {
+                transform: rotate(-45deg) scale(1);
+              }
+              &.on-run {
+                transform: rotate(315deg) scale(1.15);
+            }
           }
-          &.on-run {
-            transform: rotate(315deg);
+        }
+        .decorative-mirror {
+            @extend .decorative;
+            border-bottom: 10px solid $steel-blue;
+            border-left: 10px solid $steel-blue;
+            border-top: 10px solid $dark-steel-blue;
+            border-right: 10px solid $dark-steel-blue;
+            transform: rotate(45deg);
+            .fas.fa-clock {
+              transition: 2s ease-in-out;
+              &.stopped {
+                transform: rotate(-45deg) scale(1);
+              }
+              &.on-run {
+                transform: rotate(315deg) scale(1.15);
+            }
           }
         }
       }
-
       .results-common {
           display: flex;
           flex-direction: row;
           align-items: flex-start;
           justify-content: center;
           position: relative;
-
           .results-animation {
             display: flex;
             flex-direction: column;
@@ -174,17 +192,13 @@ body {
             justify-content: center;
             margin: 100px 0 0 0;
             transform: scale(0.5);
-
             .results-animation_head {
               width: 40px;
               height: 40px;
               border: 2px solid $steel-blue;
               border-radius: 30px;
               background-color: $deep-navy;
-              margin-right: 10px;
               transition: 1s ease-in-out;
-
-
               &.stopped {
                 animation: none;
                 transform: none;
@@ -195,28 +209,13 @@ body {
                   @include animation ('moving_head 10s 5');
                  }
               @include keyframes (moving_head) {
-                  0%   {
-                    top: Opx;
-                    left: 0px;
-                  }
-                  25%  {
-                    top: 1Opx;
-                    left: 0px;
-                  }
-                  50%  {
-                    top: 2Opx;
-                    left: 0px;
-                  }
-                  75%  {
-                    top: 1Opx;
-                    left: 0px;
-                  }
-                  100% {
-                    top:Opx; left:0px;
-                  }
+                  0%   {top: Opx;}
+                  25%  {top: -1Opx;}
+                  50%  {top: -2Opx;}
+                  75%  {top: -1Opx;}
+                  100% {top: Opx;}
                 }
             }
-
             .results-animation_body {
               display: flex;
               flex-direction: row;
@@ -226,21 +225,22 @@ body {
               .results-animation_left-arm {
                 width: 20px;
                 height: 66px;
-                transform: rotate(30deg);
                 border: 2px solid $steel-blue;
                 border-radius: 15px;
                 background-color: $deep-navy;
-                margin-right:10px;
                 position: relative;
                 top: -10px;
                 transition: 1s ease-in-out;
                 &.stopped {
+                  margin: 0 -5px;
                   transform: rotate(30deg);
+                  transform-origin: top;
                 }
                 &.on-run {
                   background-color: $dark-steel-blue;
-                  transform: rotate(-30deg);
-                  transform: translate(0px, -20px);
+                  margin: 0 -5px;
+                  transform: translate(0px, -20px) rotate(145deg);
+                  transform-origin: top;
                 }
               }
               .results-animation_torso {
@@ -260,14 +260,17 @@ body {
               }
               .results-animation_right-arm {
                 @extend .results-animation_left-arm;
-                transform: rotate(-30deg);
-                margin-left: 10px;
                 transition: 1s ease-in-out;
                 &.stopped {
+                  margin: 0 -5px;
                   transform: rotate(-30deg);
+                  transform-origin: top;
                 }
                 &.on-run {
-                  transform: translate(0px, -20px);
+                  background-color: $dark-steel-blue;
+                  margin: 0 -5px;
+                  transform: translate(0px, -20px) rotate(-145deg);
+                  transform-origin: top;
                 }
               }
             }
@@ -276,22 +279,20 @@ body {
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
-                position: relative;
               .results-animation_left-leg {
                   width: 25px;
                   height: 80px;
                   border: 2px solid $steel-blue;
                   border-radius: 15px;
                   background-color: $deep-navy;
-                  margin-right: 7.5px;
-                  margin-left: none;
                   transition: 1s ease-in-out;
                   &.stopped {
                     transform: none;
                   }
                   &.on-run {
                     background-color: $dark-steel-blue;
-                    transform: translate(0px, -20px);
+                    transform: translate(0px, -20px) rotate(30deg);
+                    transform-origin: top;
                   }
                 }
                 .results-animation_right-leg {
@@ -303,32 +304,31 @@ body {
                     transform: none;
                   }
                   &.on-run {
-                    transform: translate(0px, -20px);
                     background-color: $dark-steel-blue;
+                    transform: translate(0px, -20px) rotate(-30deg);
+                    transform-origin: top;
                   }
                 }
               }
           }
-
           .results-common_list {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             margin-top: 25px;
-
             .table_results {
                 width: 230px;
-                background-color: $deep-navy;
                 color: $steel-blue;
                 text-align: center;
-                font-weight: 600;
-                font-size: 24px;
                 text-transform: capitalize;
+                text-shadow: 3px 3px $dark-steel-blue;
+                font-family: $font-title;
+                font-weight: 600;
+                font-size: 35px;
                 padding: 10px;
                 margin: 0 5px 00;
             }
-
             .table_sorted-results {
               @extend .table_results;
             }
@@ -340,15 +340,13 @@ body {
                 justify-content: center;
                 margin: 0 40px 0 0;
                 li {
-                    width: 200px;
+                    width: 160px;
                     font-size: 18px;
                     font-weight: 600;
+                    font-family: $main-font;
                     color: $deep-navy;
                     background-color: $steel-blue;
-                    border-left: 2.5px solid $deep-navy;
-                    border-top: none;
-                    border-right: 2.5px solid $deep-navy;
-                    border-bottom: 2.5px solid $deep-navy;
+                    margin-bottom: 15px;
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
@@ -364,10 +362,10 @@ body {
                       font-size: 14px;
                       font-weight: 900;
                       color:  $steel-blue;
+                      background-color:  $deep-navy;
                       text-align: center;
                       text-shadow: none;
                       text-transform: uppercase;
-                      background-color:  $deep-navy;
                       cursor: pointer;
                       transition: 1s linear;
                       &:hover{
