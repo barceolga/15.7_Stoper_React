@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Graduate|IBM+Plex+Mono:700");
 * {
   box-sizing: border-box; }
 
@@ -11,9 +12,11 @@ body {
     right: 0;
     z-index: -1;
     display: block;
-    background-image: url("Background_1.png");
+    background-image: url("Background_3.png");
     background-size: cover;
-    height: 100%; }
+    height: 100%;
+    transform: rotate(180deg);
+    opacity: 0.80; }
   body .app-content {
     position: relative;
     overflow: auto;
@@ -30,13 +33,13 @@ body {
       margin: 5px;
       height: 35%; }
       body .app-content .controls .controls-title {
-        background-color: #b3cccc;
-        color: #000066;
+        color: #b3cccc;
         padding: 10px;
         text-transform: uppercase;
-        font-size: 33px;
-        box-shadow: 5px 10px #1a0013;
+        font-family: "Graduate", cursive;
+        font-size: 45px;
         text-align: center;
+        text-shadow: 4px 4px #283e3e;
         height: 35%;
         margin-bottom: 15px; }
       body .app-content .controls .controls_panel {
@@ -46,53 +49,51 @@ body {
         align-items: center;
         max-width: 33%;
         height: 25%; }
-        body .app-content .controls .controls_panel .button {
-          width: 130px;
-          height: auto;
-          text-decoration: none;
+        body .app-content .controls .controls_panel .controls-button {
+          min-width: 50px;
+          height: 50px;
           margin: 7.5px;
-          background-color: #000066;
-          color: #b3cccc;
-          text-align: center;
-          padding: 10px;
-          font-size: 25px;
-          font-weight: 800;
-          box-shadow: 5px 10px #1a0013;
+          background-color: #b3cccc;
+          color: #000066;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 20px;
+          font-weight: 900;
+          box-shadow: 5px 10px #283e3e;
           border: none;
           border-radius: 15px;
           transition: 1s linear; }
-          body .app-content .controls .controls_panel .button:hover {
-            color: #000066;
-            background-color: #b3cccc;
-            box-shadow: 5px 10px #283e3e; }
+          body .app-content .controls .controls_panel .controls-button:hover {
+            color: #fff;
+            background-color: #283e3e;
+            box-shadow: 5px 10px #000066; }
     body .app-content .stopwatch-common {
       display: flex;
       flex-direction: row;
       justify-content: center;
-      align-items: center; }
+      align-items: center;
+      margin-top: 25px; }
       body .app-content .stopwatch-common .stopwatch {
         width: 66%;
-        border-right: 15px solid #000066;
-        border-left: 15px solid #000066;
-        border-top: 5px solid #283e3e;
-        border-bottom: 5px solid #283e3e;
         text-transform: uppercase;
-        box-shadow: 5px 10px #1a0013;
+        text-align: center;
         margin: 0 auto;
         padding: 15px 25px;
-        background-color: #ccc;
-        background-image: radial-gradient(#fff 20%, #e0ebeb 20%, #b3cccc 30%, #283e3e);
-        color: #283e3e;
+        background-color: #000;
+        color: #b3cccc;
         text-align: center;
         transition: 1s linear;
+        font-family: "IBM Plex Mono", monospace;
         font-size: 35px;
         font-weight: 600; }
         body .app-content .stopwatch-common .stopwatch.stopped {
           transform: none; }
         body .app-content .stopwatch-common .stopwatch.on-run {
-          color: #000066;
-          transform: scale(1.15); }
-      body .app-content .stopwatch-common .decorative {
+          transform: scale(1.1);
+          font-weight: 800; }
+      body .app-content .stopwatch-common .decorative, body .app-content .stopwatch-common .decorative-mirror {
         width: 60px;
         height: 60px;
         transform: rotate(45deg);
@@ -100,13 +101,31 @@ body {
         border-right: 10px solid #b3cccc;
         border-bottom: 10px solid #283e3e;
         border-left: 10px solid #283e3e;
-        background-color: #000066;
+        color: #000066;
         box-shadow: 10px 5px #1a0013;
-        transition: 1s ease-in-out; }
-        body .app-content .stopwatch-common .decorative.stopped {
-          transform: rotate(45deg); }
-        body .app-content .stopwatch-common .decorative.on-run {
-          transform: rotate(315deg); }
+        transition: 1s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px; }
+        body .app-content .stopwatch-common .decorative .fas.fa-clock, body .app-content .stopwatch-common .decorative-mirror .fas.fa-clock {
+          transition: 2s ease-in-out; }
+          body .app-content .stopwatch-common .decorative .fas.fa-clock.stopped, body .app-content .stopwatch-common .decorative-mirror .fas.fa-clock.stopped {
+            transform: rotate(-45deg) scale(1); }
+          body .app-content .stopwatch-common .decorative .fas.fa-clock.on-run, body .app-content .stopwatch-common .decorative-mirror .fas.fa-clock.on-run {
+            transform: rotate(315deg) scale(1.15); }
+      body .app-content .stopwatch-common .decorative-mirror {
+        border-bottom: 10px solid #b3cccc;
+        border-left: 10px solid #b3cccc;
+        border-top: 10px solid #283e3e;
+        border-right: 10px solid #283e3e;
+        transform: rotate(45deg); }
+        body .app-content .stopwatch-common .decorative-mirror .fas.fa-clock {
+          transition: 2s ease-in-out; }
+          body .app-content .stopwatch-common .decorative-mirror .fas.fa-clock.stopped {
+            transform: rotate(-45deg) scale(1); }
+          body .app-content .stopwatch-common .decorative-mirror .fas.fa-clock.on-run {
+            transform: rotate(315deg) scale(1.15); }
     body .app-content .results-common {
       display: flex;
       flex-direction: row;
@@ -126,7 +145,6 @@ body {
           border: 2px solid #b3cccc;
           border-radius: 30px;
           background-color: #000066;
-          margin-right: 10px;
           transition: 1s ease-in-out; }
           body .app-content .results-common .results-animation .results-animation_head.stopped {
             animation: none;
@@ -142,88 +160,63 @@ body {
 
 @-webkit-keyframes moving_head {
   0% {
-    top: Opx;
-    left: 0px; }
+    top: Opx; }
   25% {
-    top: 1Opx;
-    left: 0px; }
+    top: -1Opx; }
   50% {
-    top: 2Opx;
-    left: 0px; }
+    top: -2Opx; }
   75% {
-    top: 1Opx;
-    left: 0px; }
+    top: -1Opx; }
   100% {
-    top: Opx;
-    left: 0px; } }
+    top: Opx; } }
 
 @-moz-keyframes moving_head {
   0% {
-    top: Opx;
-    left: 0px; }
+    top: Opx; }
   25% {
-    top: 1Opx;
-    left: 0px; }
+    top: -1Opx; }
   50% {
-    top: 2Opx;
-    left: 0px; }
+    top: -2Opx; }
   75% {
-    top: 1Opx;
-    left: 0px; }
+    top: -1Opx; }
   100% {
-    top: Opx;
-    left: 0px; } }
+    top: Opx; } }
 
 @-ms-keyframes moving_head {
   body .app-content .results-common .results-animation .results-animation_head 0% {
-    top: Opx;
-    left: 0px; }
+    top: Opx; }
   body .app-content .results-common .results-animation .results-animation_head 25% {
-    top: 1Opx;
-    left: 0px; }
+    top: -1Opx; }
   body .app-content .results-common .results-animation .results-animation_head 50% {
-    top: 2Opx;
-    left: 0px; }
+    top: -2Opx; }
   body .app-content .results-common .results-animation .results-animation_head 75% {
-    top: 1Opx;
-    left: 0px; }
+    top: -1Opx; }
   body .app-content .results-common .results-animation .results-animation_head 100% {
-    top: Opx;
-    left: 0px; } }
+    top: Opx; } }
 
 @-o-keyframes moving_head {
   0% {
-    top: Opx;
-    left: 0px; }
+    top: Opx; }
   25% {
-    top: 1Opx;
-    left: 0px; }
+    top: -1Opx; }
   50% {
-    top: 2Opx;
-    left: 0px; }
+    top: -2Opx; }
   75% {
-    top: 1Opx;
-    left: 0px; }
+    top: -1Opx; }
   100% {
-    top: Opx;
-    left: 0px; } }
+    top: Opx; } }
 
 @keyframes moving_head {
   0% {
-    top: Opx;
-    left: 0px; }
+    top: Opx; }
   25% {
-    top: 1Opx;
-    left: 0px; }
+    top: -1Opx; }
   50% {
-    top: 2Opx;
-    left: 0px; }
+    top: -2Opx; }
   75% {
-    top: 1Opx;
-    left: 0px; }
+    top: -1Opx; }
   100% {
-    top: Opx;
-    left: 0px; } }
+    top: Opx; } }
         body .app-content .results-common .results-animation .results-animation_body {
           display: flex;
           flex-direction: row;
@@ -233,20 +226,21 @@ body {
           body .app-content .results-common .results-animation .results-animation_body .results-animation_left-arm, body .app-content .results-common .results-animation .results-animation_body .results-animation_right-arm {
             width: 20px;
             height: 66px;
-            transform: rotate(30deg);
             border: 2px solid #b3cccc;
             border-radius: 15px;
             background-color: #000066;
-            margin-right: 10px;
             position: relative;
             top: -10px;
             transition: 1s ease-in-out; }
             body .app-content .results-common .results-animation .results-animation_body .results-animation_left-arm.stopped, body .app-content .results-common .results-animation .results-animation_body .stopped.results-animation_right-arm {
-              transform: rotate(30deg); }
+              margin: 0 -5px;
+              transform: rotate(30deg);
+              transform-origin: top; }
             body .app-content .results-common .results-animation .results-animation_body .results-animation_left-arm.on-run, body .app-content .results-common .results-animation .results-animation_body .on-run.results-animation_right-arm {
               background-color: #283e3e;
-              transform: rotate(-30deg);
-              transform: translate(0px, -20px); }
+              margin: 0 -5px;
+              transform: translate(0px, -20px) rotate(145deg);
+              transform-origin: top; }
           body .app-content .results-common .results-animation .results-animation_body .results-animation_torso {
             width: 60px;
             height: 80px;
@@ -260,33 +254,34 @@ body {
               background-color: #283e3e;
               transform: translate(0px, -20px); }
           body .app-content .results-common .results-animation .results-animation_body .results-animation_right-arm {
-            transform: rotate(-30deg);
-            margin-left: 10px;
             transition: 1s ease-in-out; }
             body .app-content .results-common .results-animation .results-animation_body .results-animation_right-arm.stopped {
-              transform: rotate(-30deg); }
+              margin: 0 -5px;
+              transform: rotate(-30deg);
+              transform-origin: top; }
             body .app-content .results-common .results-animation .results-animation_body .results-animation_right-arm.on-run {
-              transform: translate(0px, -20px); }
+              background-color: #283e3e;
+              margin: 0 -5px;
+              transform: translate(0px, -20px) rotate(-145deg);
+              transform-origin: top; }
         body .app-content .results-common .results-animation .results-animation_legs {
           display: flex;
           flex-direction: row;
           align-items: center;
-          justify-content: space-between;
-          position: relative; }
+          justify-content: space-between; }
           body .app-content .results-common .results-animation .results-animation_legs .results-animation_left-leg, body .app-content .results-common .results-animation .results-animation_legs .results-animation_right-leg {
             width: 25px;
             height: 80px;
             border: 2px solid #b3cccc;
             border-radius: 15px;
             background-color: #000066;
-            margin-right: 7.5px;
-            margin-left: none;
             transition: 1s ease-in-out; }
             body .app-content .results-common .results-animation .results-animation_legs .results-animation_left-leg.stopped, body .app-content .results-common .results-animation .results-animation_legs .stopped.results-animation_right-leg {
               transform: none; }
             body .app-content .results-common .results-animation .results-animation_legs .results-animation_left-leg.on-run, body .app-content .results-common .results-animation .results-animation_legs .on-run.results-animation_right-leg {
               background-color: #283e3e;
-              transform: translate(0px, -20px); }
+              transform: translate(0px, -20px) rotate(30deg);
+              transform-origin: top; }
           body .app-content .results-common .results-animation .results-animation_legs .results-animation_right-leg {
             margin-left: 7.5px;
             margin-right: none;
@@ -294,8 +289,9 @@ body {
             body .app-content .results-common .results-animation .results-animation_legs .results-animation_right-leg.stopped {
               transform: none; }
             body .app-content .results-common .results-animation .results-animation_legs .results-animation_right-leg.on-run {
-              transform: translate(0px, -20px);
-              background-color: #283e3e; }
+              background-color: #283e3e;
+              transform: translate(0px, -20px) rotate(-30deg);
+              transform-origin: top; }
       body .app-content .results-common .results-common_list {
         display: flex;
         flex-direction: column;
@@ -304,12 +300,13 @@ body {
         margin-top: 25px; }
         body .app-content .results-common .results-common_list .table_results, body .app-content .results-common .results-common_list .table_sorted-results {
           width: 230px;
-          background-color: #000066;
           color: #b3cccc;
           text-align: center;
-          font-weight: 600;
-          font-size: 24px;
           text-transform: capitalize;
+          text-shadow: 3px 3px #283e3e;
+          font-family: "Graduate", cursive;
+          font-weight: 600;
+          font-size: 35px;
           padding: 10px;
           margin: 0 5px 00; }
         body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
@@ -320,15 +317,13 @@ body {
           justify-content: center;
           margin: 0 40px 0 0; }
           body .app-content .results-common .results-common_list .results li, body .app-content .results-common .results-common_list .sorted-results li {
-            width: 200px;
+            width: 160px;
             font-size: 18px;
             font-weight: 600;
+            font-family: "IBM Plex Mono", monospace;
             color: #000066;
             background-color: #b3cccc;
-            border-left: 2.5px solid #000066;
-            border-top: none;
-            border-right: 2.5px solid #000066;
-            border-bottom: 2.5px solid #000066;
+            margin-bottom: 15px;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -343,10 +338,10 @@ body {
               font-size: 14px;
               font-weight: 900;
               color: #b3cccc;
+              background-color: #000066;
               text-align: center;
               text-shadow: none;
               text-transform: uppercase;
-              background-color: #000066;
               cursor: pointer;
               transition: 1s linear; }
               body .app-content .results-common .results-common_list .results li button:hover, body .app-content .results-common .results-common_list .sorted-results li button:hover {
