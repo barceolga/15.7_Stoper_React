@@ -16,7 +16,7 @@ class Results extends React.Component {
         let myresults = this.props.list.map( ele => {
             return (
                 <li key={ele.id}>
-                      Score: <span>{ele.result}</span>
+                      <i className={'fas fa-stopwatch'}></i> <span>{ele.result}</span>
                       <button className = {'button'} onClick = {() => this.props.deleteResultWithId(ele.id)}>x</button>
                 </li>
             );
