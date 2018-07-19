@@ -9,32 +9,6 @@ $steel-blue: #b3cccc;
 $dark-steel-blue: #283e3e;
 $super-deep-violet: #1a0013;
 
-@mixin keyframes($animation-name) {
-    @-webkit-keyframes #{$animation-name} {
-        @content;
-    }
-    @-moz-keyframes #{$animation-name} {
-        @content;
-    }
-    @-ms-keyframes #{$animation-name} {
-        @content;
-    }
-    @-o-keyframes #{$animation-name} {
-        @content;
-    }
-    @keyframes #{$animation-name} {
-        @content;
-    }
-}
-
-@mixin animation($str) {
-  -webkit-animation: #{$str};
-  -moz-animation: #{$str};
-  -ms-animation: #{$str};
-  -o-animation: #{$str};
-  animation: #{$str};
-}
-
 body {
   position: relative;
   .app-content:before {
@@ -114,11 +88,12 @@ body {
         justify-content: center;
         align-items: center;
         margin-top: 25px;
+
         .stopwatch {
           width: 66%;
           text-transform: uppercase;
           text-align: center;
-          margin: 0 auto;
+          margin: 0 50px;
           padding: 15px 25px;
           background-color: #000;
           color: $steel-blue;
@@ -137,8 +112,8 @@ body {
           }
         }
         .decorative {
-            width: 60px;
-            height: 60px;
+            width: 115px;
+            height: 100px;
             transform: rotate(45deg);
             border-top: 10px solid $steel-blue;
             border-right: 10px solid $steel-blue;
@@ -150,7 +125,7 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
+            font-size: 60px;
             .fas.fa-clock {
               transition: 2s ease-in-out;
               &.stopped {
@@ -206,9 +181,10 @@ body {
               &.on-run {
                   background-color: $dark-steel-blue;
                   transform: translate(0px, -20px);
-                  @include animation ('moving_head 10s 5');
+                  //transition: 1s ease-in-out;
+                  //animation: moving_head 1s infinite;
                  }
-              @include keyframes (moving_head) {
+              @keyframes moving_head {
                   0%   {top: Opx;}
                   25%  {top: -1Opx;}
                   50%  {top: -2Opx;}
