@@ -79,7 +79,7 @@ body {
         width: 66%;
         text-transform: uppercase;
         text-align: center;
-        margin: 0 auto;
+        margin: 0 50px;
         padding: 15px 25px;
         background-color: #000;
         color: #b3cccc;
@@ -94,8 +94,8 @@ body {
           transform: scale(1.1);
           font-weight: 800; }
       body .app-content .stopwatch-common .decorative, body .app-content .stopwatch-common .decorative-mirror {
-        width: 60px;
-        height: 60px;
+        width: 115px;
+        height: 100px;
         transform: rotate(45deg);
         border-top: 10px solid #b3cccc;
         border-right: 10px solid #b3cccc;
@@ -107,7 +107,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 30px; }
+        font-size: 60px; }
         body .app-content .stopwatch-common .decorative .fas.fa-clock, body .app-content .stopwatch-common .decorative-mirror .fas.fa-clock {
           transition: 2s ease-in-out; }
           body .app-content .stopwatch-common .decorative .fas.fa-clock.stopped, body .app-content .stopwatch-common .decorative-mirror .fas.fa-clock.stopped {
@@ -151,60 +151,7 @@ body {
             transform: none; }
           body .app-content .results-common .results-animation .results-animation_head.on-run {
             background-color: #283e3e;
-            transform: translate(0px, -20px);
-            -webkit-animation: moving_head 10s 5;
-            -moz-animation: moving_head 10s 5;
-            -ms-animation: moving_head 10s 5;
-            -o-animation: moving_head 10s 5;
-            animation: moving_head 10s 5; }
-
-@-webkit-keyframes moving_head {
-  0% {
-    top: Opx; }
-  25% {
-    top: -1Opx; }
-  50% {
-    top: -2Opx; }
-  75% {
-    top: -1Opx; }
-  100% {
-    top: Opx; } }
-
-@-moz-keyframes moving_head {
-  0% {
-    top: Opx; }
-  25% {
-    top: -1Opx; }
-  50% {
-    top: -2Opx; }
-  75% {
-    top: -1Opx; }
-  100% {
-    top: Opx; } }
-
-@-ms-keyframes moving_head {
-  body .app-content .results-common .results-animation .results-animation_head 0% {
-    top: Opx; }
-  body .app-content .results-common .results-animation .results-animation_head 25% {
-    top: -1Opx; }
-  body .app-content .results-common .results-animation .results-animation_head 50% {
-    top: -2Opx; }
-  body .app-content .results-common .results-animation .results-animation_head 75% {
-    top: -1Opx; }
-  body .app-content .results-common .results-animation .results-animation_head 100% {
-    top: Opx; } }
-
-@-o-keyframes moving_head {
-  0% {
-    top: Opx; }
-  25% {
-    top: -1Opx; }
-  50% {
-    top: -2Opx; }
-  75% {
-    top: -1Opx; }
-  100% {
-    top: Opx; } }
+            transform: translate(0px, -20px); }
 
 @keyframes moving_head {
   0% {
