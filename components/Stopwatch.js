@@ -30,7 +30,6 @@ class Stopwatch extends React.Component {
       });
   }
 
-
   pad0 = (value) => {
       let result = value.toString();
         if (result.length < 2) {
@@ -89,7 +88,7 @@ class Stopwatch extends React.Component {
 
   stop = () => {
         this.setState({
-          running: false
+            running: false
         });
         clearInterval(this.watch);
   }
@@ -102,20 +101,19 @@ class Stopwatch extends React.Component {
   addResult = () => {
 
           let newResult= {
-            id: (this.state.list.length),
-            result: this.format(),
-            myValue: (60000 *this.state.times.minutes) +(1000 * this.state.times.seconds)  + (10 * this.state.times.miliseconds),
+              id: (this.state.list.length),
+              result: this.format(),
+              myValue: (60000 *this.state.times.minutes) +(1000 * this.state.times.seconds)  + (10 * this.state.times.miliseconds),
           };
           this.setState({list:[...this.state.list, newResult], running: false});
-        }
+  }
 
   clearResults = () => {
         this.setState({
-          list: [],
-          finalList: []
+            list: [],
+            finalList: []
         });
-    }
-
+  }
 
   sortResults = () => {
         const myList = [...this.state.list];
@@ -179,6 +177,5 @@ class Stopwatch extends React.Component {
               </div>
           </div>
         );
-
-      }
+    }
 }
