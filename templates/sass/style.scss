@@ -47,9 +47,9 @@ body {
           font-family: $font-title;
           font-size: 45px;
           text-align: center;
-          text-shadow: 4px 4px $dark-steel-blue;
+          text-shadow: 4px 4px $super-deep-violet;
           height: 35%;
-          margin-bottom: 15px;
+          margin: 0 0 0 15px;
         }
         .controls_panel {
           display: flex;
@@ -88,13 +88,13 @@ body {
         justify-content: center;
         align-items: center;
         margin-top: 25px;
-
         .stopwatch {
           width: 66%;
+          height: 100px;
           text-transform: uppercase;
           text-align: center;
           margin: 0 50px;
-          padding: 15px 25px;
+          padding: 25px;
           background-color: #000;
           color: $steel-blue;
           text-align: center;
@@ -102,13 +102,15 @@ body {
           font-family: $main-font;
           font-size: 35px;
           font-weight: 600;
-
           &.stopped {
             transform: none;
           }
           &.on-run {
             transform: scale(1.10);
             font-weight: 800;
+            padding: 20px;
+            font-size: 40px;
+            color: #ffd699;
           }
         }
         .decorative {
@@ -127,15 +129,27 @@ body {
             justify-content: center;
             font-size: 60px;
             .fas.fa-clock {
-              transition: 2s ease-in-out;
+              @keyframes turning-clock {
+                0% {transform: rotate(-45deg) scale(1);}
+                10% {transform: rotate(315deg) scale(1.20);}
+                20% {transform: rotate(675deg) scale(1.20);}
+                30% {transform: rotate(1035deg) scale(1.20);}
+                40% {transform: rotate(1395deg) scale(1.20);}
+                50% {transform: rotate(1755deg) scale(1.20);}
+                60% {transform: rotate(2115deg) scale(1.20);}
+                70% {transform: rotate(2475deg) scale(1.20);}
+                80% {transform: rotate(2835deg) scale(1.20);}
+                90% {transform: rotate(3195deg) scale(1.20);}
+                100% {transform: rotate(3555deg) scale(1);}
+              }
               &.stopped {
                 transform: rotate(-45deg) scale(1);
               }
               &.on-run {
-                transform: rotate(315deg) scale(1.15);
+                animation: turning-clock 10s 1;
+              }
             }
           }
-        }
         .decorative-mirror {
             @extend .decorative;
             border-bottom: 10px solid $steel-blue;
@@ -144,16 +158,28 @@ body {
             border-right: 10px solid $dark-steel-blue;
             transform: rotate(45deg);
             .fas.fa-clock {
-              transition: 2s ease-in-out;
+              @keyframes turning-clock {
+                0% {transform: rotate(-45deg) scale(1);}
+                10% {transform: rotate(315deg) scale(1.20);}
+                20% {transform: rotate(675deg) scale(1.20);}
+                30% {transform: rotate(1035deg) scale(1.20);}
+                40% {transform: rotate(1395deg) scale(1.20);}
+                50% {transform: rotate(1755deg) scale(1.20);}
+                60% {transform: rotate(2115deg) scale(1.20);}
+                70% {transform: rotate(2475deg) scale(1.20);}
+                80% {transform: rotate(2835deg) scale(1.20);}
+                90% {transform: rotate(3195deg) scale(1.20);}
+                100% {transform: rotate(3555deg) scale(1);}
+              }
               &.stopped {
                 transform: rotate(-45deg) scale(1);
               }
               &.on-run {
-                transform: rotate(315deg) scale(1.15);
+                animation: turning-clock 10s 1;
+              }
             }
           }
         }
-      }
       .results-common {
           display: flex;
           flex-direction: row;
@@ -173,24 +199,18 @@ body {
               border: 2px solid $steel-blue;
               border-radius: 30px;
               background-color: $deep-navy;
-              transition: 1s ease-in-out;
+              @keyframes moving_head {
+                  0%   {transform: translate(0, 0); background-color: $deep-navy;}
+                  50%  {transform: translate(0, -20px); background-color: $dark-steel-blue;}
+                  100% {transform: translate(0, -10px); background-color: $deep-navy;}
+                }
               &.stopped {
                 animation: none;
-                transform: none;
               }
               &.on-run {
-                  background-color: $dark-steel-blue;
-                  transform: translate(0px, -20px);
-                  //transition: 1s ease-in-out;
-                  //animation: moving_head 1s infinite;
+                  transition: 1s ease-in-out;
+                  animation: moving_head 1s infinite;
                  }
-              @keyframes moving_head {
-                  0%   {top: Opx;}
-                  25%  {top: -1Opx;}
-                  50%  {top: -2Opx;}
-                  75%  {top: -1Opx;}
-                  100% {top: Opx;}
-                }
             }
             .results-animation_body {
               display: flex;
@@ -206,17 +226,20 @@ body {
                 background-color: $deep-navy;
                 position: relative;
                 top: -10px;
-                transition: 1s ease-in-out;
+                @keyframes moving_left-arm {
+                    0%   {transform: translate(0, 0) rotate(30deg); background-color: $deep-navy;}
+                    50%  {transform: translate(0, -20px) rotate(145deg); background-color: $dark-steel-blue;}
+                    100% {transform: translate(0, -10px) rotate(30deg); background-color: $deep-navy;}
+                  }
                 &.stopped {
                   margin: 0 -5px;
                   transform: rotate(30deg);
                   transform-origin: top;
                 }
                 &.on-run {
-                  background-color: $dark-steel-blue;
                   margin: 0 -5px;
-                  transform: translate(0px, -20px) rotate(145deg);
                   transform-origin: top;
+                  animation: moving_left-arm 1s infinite;
                 }
               }
               .results-animation_torso {
@@ -225,28 +248,34 @@ body {
                 border: 2px solid $steel-blue;
                 border-radius: 10px;
                 background-color: $deep-navy;
-                transition: 1s ease-in-out;
+                @keyframes moving_torso {
+                    0%   {transform: translate(0, 0); background-color: $deep-navy;}
+                    50%  {transform: translate(0, -20px); background-color: $dark-steel-blue;}
+                    100% {transform: translate(0, -10px); background-color: $deep-navy;}
+                  }
                 &.stopped {
-                  transform: none;
+                  animation: none;
                 }
                 &.on-run {
-                  background-color: $dark-steel-blue;
-                  transform: translate(0px, -20px);
+                  animation: moving_torso 1s infinite;
                 }
               }
               .results-animation_right-arm {
                 @extend .results-animation_left-arm;
-                transition: 1s ease-in-out;
+                @keyframes moving_right-arm {
+                    0%   {transform: translate(0, 0) rotate(-30deg); background-color: $deep-navy;}
+                    50%  {transform: translate(0, -20px) rotate(-145deg); background-color: $dark-steel-blue;}
+                    100% {transform: translate(0, -10px) rotate(-30deg); background-color: $deep-navy;}
+                  }
                 &.stopped {
                   margin: 0 -5px;
                   transform: rotate(-30deg);
                   transform-origin: top;
                 }
                 &.on-run {
-                  background-color: $dark-steel-blue;
                   margin: 0 -5px;
-                  transform: translate(0px, -20px) rotate(-145deg);
                   transform-origin: top;
+                  animation: moving_right-arm 1s infinite;
                 }
               }
             }
@@ -261,32 +290,38 @@ body {
                   border: 2px solid $steel-blue;
                   border-radius: 15px;
                   background-color: $deep-navy;
-                  transition: 1s ease-in-out;
+                  @keyframes moving_left-leg {
+                      0%   {transform: translate(0, 0) rotate(0deg); background-color: $deep-navy;}
+                      50%  {transform: translate(0, -20px) rotate(30deg); background-color: $dark-steel-blue;}
+                      100% {transform: translate(0, -10px) rotate(0deg); background-color: $deep-navy;}
+                    }
                   &.stopped {
-                    transform: none;
+                    animation: none;
                   }
                   &.on-run {
-                    background-color: $dark-steel-blue;
-                    transform: translate(0px, -20px) rotate(30deg);
                     transform-origin: top;
+                    animation: moving_left-leg 1s infinite;
                   }
                 }
                 .results-animation_right-leg {
                   @extend .results-animation_left-leg;
                   margin-left: 7.5px;
                   margin-right: none;
-                  transition: 1s ease-in-out;
+                  @keyframes moving_right-leg {
+                      0%   {transform: translate(0, 0) rotate(0deg); background-color: $deep-navy;}
+                      50%  {transform: translate(0, -20px) rotate(-30deg); background-color: $dark-steel-blue;}
+                      100% {transform: translate(0, -10px) rotate(0deg); background-color: $deep-navy;}
+                    }
                   &.stopped {
-                    transform: none;
+                    animation: none;
                   }
                   &.on-run {
-                    background-color: $dark-steel-blue;
-                    transform: translate(0px, -20px) rotate(-30deg);
                     transform-origin: top;
+                    animation: moving_right-leg 1s infinite;
                   }
                 }
               }
-          }
+            }
           .results-common_list {
             display: flex;
             flex-direction: column;
@@ -298,7 +333,7 @@ body {
                 color: $steel-blue;
                 text-align: center;
                 text-transform: capitalize;
-                text-shadow: 3px 3px $dark-steel-blue;
+                text-shadow: 3px 3px $super-deep-violet;
                 font-family: $font-title;
                 font-weight: 600;
                 font-size: 35px;
@@ -332,7 +367,7 @@ body {
                       font-weight: 800;
                       color: $dark-steel-blue;;
                       padding: 5px;
-                }
+                    }
                   button {
                       padding: 3px;
                       font-size: 14px;
@@ -347,15 +382,14 @@ body {
                       &:hover{
                         color: $dark-steel-blue;
                         background-color: #fff;
+                      }
+                    }
                   }
                 }
-              }
-            }
-            .sorted-results {
+              .sorted-results {
               @extend .results;
-            }
+              }
           }
-
       }
   }
 
