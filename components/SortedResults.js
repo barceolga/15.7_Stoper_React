@@ -16,8 +16,13 @@ class SortedResults extends React.Component {
         let sortedResults = this.props.finalList.map( ele => {
             return (
                 <li key={ele.id}>
-                      <i className={'fas fa-trophy'}></i> <span>{ele.result}</span>
-                      <button className = {'button'} onClick = {() => this.props.deleteSortedResultWithId(ele.id)}>X</button>
+                      <i className={'fas fa-trophy'}></i>
+                      <span>{ele.result}</span>
+                      <button
+                        className = {'button'}
+                        onClick = {() => this.props.deleteSortedResultWithId(ele.id)}>
+                            x
+                        </button>
                 </li>
             );
 
