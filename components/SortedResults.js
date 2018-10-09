@@ -21,7 +21,7 @@ class SortedResults extends React.Component {
                       <button
                         className = {'button'}
                         onClick = {() => this.props.deleteSortedResultWithId(ele.id)}>
-                            x
+                            <i className={'fas fa-trash'}></i>
                         </button>
                 </li>
             );

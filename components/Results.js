@@ -21,7 +21,7 @@ class Results extends React.Component {
                       <button
                         className = {'button'}
                         onClick = {() => this.props.deleteResultWithId(ele.id)}>
-                            x
+                            <i className={'fas fa-trash'}></i>
                         </button>
                 </li>
             );
