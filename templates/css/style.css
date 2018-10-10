@@ -12,10 +12,9 @@ body {
     right: 0;
     z-index: -1;
     display: block;
-    background-image: url("Background_3.png");
+    background-image: url("Stopwatch_background.jpg");
     background-size: cover;
     height: 100%;
-    transform: rotate(180deg);
     opacity: 0.80; }
   body .app-content {
     position: relative;
@@ -24,7 +23,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center; }
+    align-items: center;
+    margin-top: 300px; }
     body .app-content .controls {
       display: flex;
       flex-direction: column;
@@ -351,15 +351,20 @@ body {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          margin: 0 40px 0 0; }
+          margin: 0 40px 0 0;
+          height: 260px;
+          overflow-y: auto;
+          overflow-x: hidden; }
           body .app-content .results-common .results-common_list .results li, body .app-content .results-common .results-common_list .sorted-results li {
             width: 160px;
+            min-height: 43px;
+            height: auto;
             font-size: 18px;
             font-weight: 600;
             font-family: "IBM Plex Mono", monospace;
             color: #000066;
             background-color: #b3cccc;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -368,11 +373,13 @@ body {
               font-size: 18px;
               font-weight: 800;
               color: #283e3e;
-              padding: 5px; }
+              padding: 5px;
+              height: 38px; }
             body .app-content .results-common .results-common_list .results li button, body .app-content .results-common .results-common_list .sorted-results li button {
               padding: 2px;
               font-size: 14px;
               font-weight: 900;
+              height: 38px;
               color: #000066;
               border: none;
               background-color: transparent;
@@ -384,6 +391,8 @@ body {
               body .app-content .results-common .results-common_list .results li button:hover, body .app-content .results-common .results-common_list .sorted-results li button:hover {
                 color: #fff;
                 background-color: #283e3e; }
+          body .app-content .results-common .results-common_list .results li:first-of-type, body .app-content .results-common .results-common_list .sorted-results li:first-of-type {
+            margin-top: 25px; }
 
 @media (max-width: 767px) and (orientation: portrait) {
   body {
@@ -399,90 +408,108 @@ body {
       background-image: url("Background_3._phone_portrait.png");
       background-size: cover;
       height: 100%;
-      transform: rotate(180deg);
       opacity: 0.80; }
-    body .app-content .controls {
-      height: auto; }
-      body .app-content .controls .controls-title {
-        font-size: 35px;
-        height: auto;
-        text-shadow: 3px 3px #1a0013;
-        margin: 0 0 0 10px; }
-      body .app-content .controls .controls_panel {
-        max-width: 100vw;
+    body .app-content {
+      margin-top: 17vh; }
+      body .app-content .controls {
         height: auto; }
-        body .app-content .controls .controls_panel .controls-button {
-          font-size: 15px;
-          min-width: 35px;
-          height: 35px;
-          margin: 5px;
-          box-shadow: 3.5px 7px #283e3e;
-          border-radius: 10px; }
-          body .app-content .controls .controls_panel .controls-button:hover {
-            box-shadow: 3.5px 7px #000066; }
-    body .app-content .stopwatch-common {
-      margin-top: 15px; }
-      body .app-content .stopwatch-common .stopwatch {
-        width: 50vw;
-        height: 75px;
-        margin: 0 25px;
-        padding: 18px;
-        font-size: 24px; }
-        body .app-content .stopwatch-common .stopwatch.on-run {
-          font-size: 28px;
-          padding: 14px; }
-      body .app-content .stopwatch-common .decorative, body .app-content .stopwatch-common .decorative-mirror {
-        width: 50px;
-        height: 50px;
-        font-size: 25px;
-        transform: rotate(45deg);
-        border-top: 5px solid #b3cccc;
-        border-right: 5px solid #b3cccc;
-        border-bottom: 5px solid #283e3e;
-        border-left: 5px solid #283e3e;
-        box-shadow: 5px 1px #1a0013; }
-      body .app-content .stopwatch-common .decorative-mirror {
-        width: 50px;
-        height: 50px;
-        font-size: 25px;
-        transform: rotate(45deg);
-        border-bottom: 5px solid #b3cccc;
-        border-left: 5px solid #b3cccc;
-        border-top: 5px solid #283e3e;
-        border-right: 5px solid #283e3e;
-        box-shadow: 5px 1px #1a0013; }
-    body .app-content .results-common {
-      flex-direction: row; }
-      body .app-content .results-common .results-animation {
-        margin: 25px 0 0 0;
-        transform: scale(0.2); }
-      body .app-content .results-common .results-common_list {
-        width: 100px; }
-        body .app-content .results-common .results-common_list .table_results, body .app-content .results-common .results-common_list .table_sorted-results {
-          transform: scale(0.5); }
-        body .app-content .results-common .results-common_list .table_sorted-results {
-          transform: scale(0.5); }
-        body .app-content .results-common .results-common_list .results li, body .app-content .results-common .results-common_list .sorted-results li {
-          flex-direction: column;
-          width: 80px;
-          font-size: 12px;
+        body .app-content .controls .controls-title {
+          font-size: 35px;
           height: auto;
-          padding: 2.5px; }
-          body .app-content .results-common .results-common_list .results li span, body .app-content .results-common .results-common_list .sorted-results li span {
-            font-size: 12px;
-            padding: 2.5px; }
-          body .app-content .results-common .results-common_list .results li button, body .app-content .results-common .results-common_list .sorted-results li button {
-            font-size: 14px;
-            padding: 1px; }
-        body .app-content .results-common .results-common_list .sorted-results li {
-          flex-direction: column;
-          width: 80px;
-          font-size: 12px;
-          height: auto;
-          padding: 2.5px; }
-          body .app-content .results-common .results-common_list .sorted-results li span {
-            font-size: 12px;
-            padding: 2.5px; }
-          body .app-content .results-common .results-common_list .sorted-results li button {
-            font-size: 14px;
-            padding: 1px; } }
+          text-shadow: 3px 3px #1a0013;
+          margin: 0 0 0 10px; }
+        body .app-content .controls .controls_panel {
+          max-width: 100vw;
+          height: auto; }
+          body .app-content .controls .controls_panel .controls-button {
+            font-size: 15px;
+            min-width: 35px;
+            height: 35px;
+            margin: 5px;
+            box-shadow: 3.5px 7px #283e3e;
+            border-radius: 10px; }
+            body .app-content .controls .controls_panel .controls-button:hover {
+              box-shadow: 3.5px 7px #000066; }
+      body .app-content .stopwatch-common {
+        margin-top: 15px; }
+        body .app-content .stopwatch-common .stopwatch {
+          width: 50vw;
+          height: 75px;
+          margin: 0 25px;
+          padding: 18px;
+          font-size: 24px; }
+          body .app-content .stopwatch-common .stopwatch.on-run {
+            font-size: 28px;
+            padding: 14px; }
+        body .app-content .stopwatch-common .decorative, body .app-content .stopwatch-common .decorative-mirror {
+          width: 50px;
+          height: 50px;
+          font-size: 25px;
+          transform: rotate(45deg);
+          border-top: 5px solid #b3cccc;
+          border-right: 5px solid #b3cccc;
+          border-bottom: 5px solid #283e3e;
+          border-left: 5px solid #283e3e;
+          box-shadow: 5px 1px #1a0013; }
+        body .app-content .stopwatch-common .decorative-mirror {
+          width: 50px;
+          height: 50px;
+          font-size: 25px;
+          transform: rotate(45deg);
+          border-bottom: 5px solid #b3cccc;
+          border-left: 5px solid #b3cccc;
+          border-top: 5px solid #283e3e;
+          border-right: 5px solid #283e3e;
+          box-shadow: 5px 1px #1a0013; }
+      body .app-content .results-common {
+        flex-direction: row; }
+        body .app-content .results-common .results-animation {
+          margin: 25px 0 0 0;
+          transform: scale(0.2); }
+        body .app-content .results-common .results-common_list {
+          width: 100px;
+          margin-top: 5px; }
+          body .app-content .results-common .results-common_list .table_results, body .app-content .results-common .results-common_list .table_sorted-results {
+            transform: scale(0.5); }
+          body .app-content .results-common .results-common_list .table_sorted-results {
+            transform: scale(0.5); }
+          body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
+            height: 20vh; }
+            body .app-content .results-common .results-common_list .results li, body .app-content .results-common .results-common_list .sorted-results li {
+              flex-direction: column;
+              width: 80px;
+              font-size: 12px;
+              height: auto;
+              max-height: 60px;
+              min-height: 50px;
+              padding: 2.5px; }
+              body .app-content .results-common .results-common_list .results li span, body .app-content .results-common .results-common_list .sorted-results li span {
+                font-size: 12px;
+                padding: 2.5px;
+                height: auto; }
+              body .app-content .results-common .results-common_list .results li button, body .app-content .results-common .results-common_list .sorted-results li button {
+                font-size: 14px;
+                padding: 0;
+                margin-bottom: 1px; }
+            body .app-content .results-common .results-common_list .results li:first-of-type, body .app-content .results-common .results-common_list .sorted-results li:first-of-type {
+              margin-top: 30px; }
+          body .app-content .results-common .results-common_list .sorted-results {
+            height: 20vh; }
+            body .app-content .results-common .results-common_list .sorted-results li {
+              flex-direction: column;
+              width: 80px;
+              font-size: 12px;
+              min-height: 50px;
+              height: auto;
+              max-height: 60px;
+              padding: 2.5px; }
+              body .app-content .results-common .results-common_list .sorted-results li span {
+                font-size: 12px;
+                padding: 0;
+                height: auto; }
+              body .app-content .results-common .results-common_list .sorted-results li button {
+                font-size: 14px;
+                padding: 1px;
+                margin-bottom: 1px; }
+            body .app-content .results-common .results-common_list .sorted-results li:first-of-type {
+              margin-top: 30px; } }
