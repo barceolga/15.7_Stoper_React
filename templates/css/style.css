@@ -18,7 +18,7 @@ body {
     height: 100%;
     opacity: 0.80; }
   body .app-content {
-    position: realative;
+    position: relative;
     overflow: auto;
     z-index: 9999;
     display: flex;
@@ -526,7 +526,9 @@ body {
 
 @media (max-width: 767px) and (orientation: landscape) {
   body {
-    position: relative; }
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden; }
     body .app-content:before {
       content: "";
       position: fixed;
