@@ -13,7 +13,7 @@ body {
     right: 0;
     z-index: -1;
     display: block;
-    background-image: url("Stopwatch_background.jpg");
+    background-image: url("../../images/Stopwatch_background.jpg");
     background-size: cover;
     height: 100%;
     opacity: 0.80; }
@@ -405,7 +405,9 @@ body {
 
 @media (max-width: 767px) and (orientation: portrait) {
   body {
-    position: relative; }
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto; }
     body .app-content:before {
       content: "";
       position: fixed;
@@ -414,7 +416,7 @@ body {
       right: 0;
       z-index: -1;
       display: block;
-      background-image: url("Background_3._phone_portrait.png");
+      background-image: url("../../images/Background_3._phone_portrait.png");
       background-size: cover;
       height: 100%;
       opacity: 0.80; }
@@ -537,7 +539,7 @@ body {
       right: 0;
       z-index: -1;
       display: block;
-      background-image: url("Background_3._phone_landscape.png");
+      background-image: url("../../images/Background_3._phone_landscape.png");
       background-size: cover;
       height: 100%;
       opacity: 0.80; }
@@ -646,3 +648,37 @@ body {
                 margin-bottom: 1px; }
             body .app-content .results-common .results-common_list .sorted-results li:first-of-type {
               margin-top: 20px; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    overflow: auto; }
+    body .app-content:before {
+      background-image: url("../../images/Stopwatch_tablet.png"); }
+    body .app-content {
+      margin-top: 125px; } }
+
+@media (min-width: 992px) and (max-width: 1279px) {
+  body .app-content:before {
+    background-image: url("../../images/Stopwatch_tablet.png"); }
+  body .app-content {
+    margin-top: 175px; }
+    body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
+      height: 225px; }
+    body .app-content .results-common .results-common_list .sorted-results {
+      height: 225px; } }
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  body .app-content:before {
+    background-image: url("../../images/Stopwatch_desktop_medium.png"); }
+  body .app-content {
+    margin-top: 225px; }
+    body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
+      height: 225px; }
+    body .app-content .results-common .results-common_list .sorted-results {
+      height: 225px; } }
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  body .app-content:before {
+    background-image: url("../../images/Stopwatch_desktop_large.png"); }
+  body .app-content {
+    margin-top: 240px; } }
