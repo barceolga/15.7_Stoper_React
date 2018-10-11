@@ -12,6 +12,10 @@ $super-deep-violet: #1a0013;
 $phone_portrait: "(max-width: 767px) and (orientation: portrait)";
 $phone_landscape: "(max-width: 767px) and (orientation: landscape)";
 $tablet: "(min-width: 768px) and (max-width: 991px)";
+$desktop_small: "(min-width: 992px) and (max-width: 1279px)";
+$desktop_medium: "(min-width: 1280px) and (max-width: 1439px)";
+$desktop_large: "(min-width: 1440px) and (max-width: 1919px)";
+$desktop_extra_large: "(min-width: 1920px)";
 
 body {
   position: relative;
@@ -24,10 +28,9 @@ body {
   right: 0;
   z-index: -1;
   display: block;
-  background-image: url("Stopwatch_background.jpg");
+  background-image: url("../../images/Stopwatch_background.jpg");
   background-size: cover;
   height: 100%;
-  //transform: rotate(180deg);
   opacity: 0.80;
 }
   .app-content {
@@ -431,6 +434,8 @@ body {
 @media#{$phone_portrait} {
   body {
     position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
     .app-content:before {
     content: "";
     position: fixed;
@@ -439,7 +444,7 @@ body {
     right: 0;
     z-index: -1;
     display: block;
-    background-image: url("Background_3._phone_portrait.png");
+    background-image: url("../../images/Background_3._phone_portrait.png");
     background-size: cover;
     height: 100%;
     opacity: 0.80;
@@ -593,7 +598,7 @@ body {
     right: 0;
     z-index: -1;
     display: block;
-    background-image: url("Background_3._phone_landscape.png");
+    background-image: url("../../images/Background_3._phone_landscape.png");
     background-size: cover;
     height: 100%;
     opacity: 0.80;
@@ -730,6 +735,69 @@ body {
         }
 
       }
+    }
+  }
+}
+@media#{$tablet} {
+  body {
+    overflow: auto;
+    .app-content:before {
+    background-image: url("../../images/Stopwatch_tablet.png");
+  }
+    .app-content {
+      margin-top: 125px;
+    }
+  }
+}
+@media#{$desktop_small} {
+  body {
+    .app-content:before {
+    background-image: url("../../images/Stopwatch_tablet.png");
+  }
+    .app-content {
+      margin-top: 175px;
+      .results-common {
+        .results-common_list {
+          .results {
+            height: 225px;
+          }
+          .sorted-results {
+            height: 225px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media#{$desktop_medium} {
+  body {
+    .app-content:before {
+    background-image: url("../../images/Stopwatch_desktop_medium.png");
+  }
+    .app-content {
+      margin-top: 225px;
+      .results-common {
+        .results-common_list {
+          .results {
+            height: 225px;
+          }
+          .sorted-results {
+            height: 225px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media#{$desktop_large} {
+  body {
+    .app-content:before {
+    background-image: url("../../images/Stopwatch_desktop_large.png");
+  }
+    .app-content {
+      margin-top: 240px;
     }
   }
 }
