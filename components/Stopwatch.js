@@ -10,7 +10,8 @@ class Stopwatch extends React.Component {
             miliseconds: 0
         },
         list: [],
-        finalList: []
+        finalList: [],
+        theBestResult: []
       };
     }
   static propTypes ={
@@ -122,6 +123,7 @@ class Stopwatch extends React.Component {
             finalList: sortedList
         });
 
+
   }
 
   deleteResultWithId = (id) => {
@@ -135,6 +137,12 @@ class Stopwatch extends React.Component {
             finalList: this.state.finalList.filter( ele => ele.id !== id)
         });
   }
+  pickTheBestTime = () => {
+        const myList = [...this.state.list];
+        let sortedList = myList.sort(function(a, b) {return (a.myValue > b.myValue) ? 1 : ((b.myValue > a.myValue) ? -1 : 0);});
+        const theBestTime = sortedList[0].result;
+        alert("Your best result is " + theBestTime + ".");
+  }
 
   render = () => {
         return (
@@ -147,6 +155,7 @@ class Stopwatch extends React.Component {
                       addResult={this.addResult}
                       clearResults={this.clearResults}
                       sortResults={this.sortResults}
+                      pickTheBestTime={this.pickTheBestTime}
                     />
                     <Display
                       time={this.format()}
