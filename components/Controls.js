@@ -44,6 +44,12 @@ class Controls extends React.Component {
                         onClick = {() => this.props.sortResults()}>
                           <i className={'fas fa-sort-numeric-down'}></i>
                         </button>
+                        <button
+                          className={'controls-button'}
+                          id={'pick'}
+                          onClick = {() => this.props.pickTheBestTime()}>
+                            <i className={'fas fa-trophy'}></i>
+                          </button>
                   </div>
               </div>
         );
