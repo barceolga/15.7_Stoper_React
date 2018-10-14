@@ -4,6 +4,7 @@ class Stopwatch extends React.Component {
     super(props);
     this.state = {
         running: false,
+        showBestScore: false,
         times: {
             minutes: 0,
             seconds: 0,
@@ -11,7 +12,7 @@ class Stopwatch extends React.Component {
         },
         list: [],
         finalList: [],
-        theBestResult: []
+        theBestResult: ""
       };
     }
   static propTypes ={
@@ -141,7 +142,16 @@ class Stopwatch extends React.Component {
         const myList = [...this.state.list];
         let sortedList = myList.sort(function(a, b) {return (a.myValue > b.myValue) ? 1 : ((b.myValue > a.myValue) ? -1 : 0);});
         const theBestTime = sortedList[0].result;
-        alert("Your best result is " + theBestTime + ".");
+        this.setState({
+            theBestResult: theBestTime,
+            showBestScore: true
+        });
+  }
+
+  formatTheBestTime = () => {
+      let theBestScore = this.state.theBestResult;
+
+      return "Your best score is " + theBestScore + "." ;
   }
 
   render = () => {
@@ -159,7 +169,10 @@ class Stopwatch extends React.Component {
                     />
                     <Display
                       time={this.format()}
-                      running={this.state.running}/>
+                      running={this.state.running}
+                      showBestScore={this.state.showBestScore}
+                      theBestResult={this.formatTheBestTime()}
+                      />
 
               </div>
               <div className={'results-common'}>

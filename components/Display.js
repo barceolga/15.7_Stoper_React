@@ -4,8 +4,10 @@ class Display extends React.Component {
     }
 
     static propTypes ={
+      running: React.PropTypes.bool.isRequired,
+      showBestScore: React.PropTypes.bool.isRequired,
       time: React.PropTypes.string.isRequired,
-      running: React.PropTypes.bool.isRequired
+      theBestResult: React.PropTypes.string.isRequired
     }
 
     render = () => {
@@ -15,6 +17,7 @@ class Display extends React.Component {
                       <i className={`fas fa-clock ${this.props.running===true?'on-run':'stopped'}`}></i>
                 </div>
                 <div className ={`stopwatch ${this.props.running===true?'on-run':'stopped'}`} > {this.props.time}</div>
+                <div className ={`screen ${this.props.showBestScore===true?'active':'stopped'}`}> {this.props.theBestResult} </div>
                 <div className={'decorative-mirror'}>
                       <i className={`fas fa-clock ${this.props.running===true?'on-run':'stopped'}`}></i>
                 </div>

@@ -100,6 +100,8 @@ body {
         .stopwatch {
           width: 66%;
           height: 100px;
+          position: relative;
+				  z-index: 10000;
           text-transform: uppercase;
           text-align: center;
           margin: 0 50px;
@@ -120,6 +122,28 @@ body {
             padding: 20px;
             font-size: 40px;
             color: #ffd699;
+          }
+        }
+        .screen {
+          width: auto;
+          height: 60px;
+          position: absolute;
+          z-index: 10001;
+          text-align: center;
+          margin: 0;
+          padding: 15px;
+          background-color: #000;
+          color: #ffd699;
+          text-align: center;
+          transition: 1s linear;
+          font-family: $main-font;
+          font-size: 18px;
+          font-weight: 600;
+          &.stopped {
+            display: none;
+          }
+          &.active {
+           display: block;
           }
         }
         .decorative {
