@@ -51,6 +51,7 @@ class Stopwatch extends React.Component {
   start = () => {
       if (!this.state.running) {
         this.state.running = true;
+        this.state.showBestScore = false;
         this.watch = setInterval(() => this.step(), 10);
       }
   }
