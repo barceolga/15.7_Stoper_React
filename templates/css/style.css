@@ -473,6 +473,10 @@ body {
           body .app-content .stopwatch-common .stopwatch.on-run {
             font-size: 28px;
             padding: 14px; }
+        body .app-content .stopwatch-common .screen {
+          width: 50vw;
+          height: 75px;
+          font-size: 15px; }
         body .app-content .stopwatch-common .decorative, body .app-content .stopwatch-common .decorative-mirror {
           width: 50px;
           height: 50px;
@@ -596,6 +600,10 @@ body {
           body .app-content .stopwatch-common .stopwatch.on-run {
             font-size: 28px;
             padding: 14px; }
+        body .app-content .stopwatch-common .screen {
+          width: 40vw;
+          height: 75px;
+          font-size: 15px; }
         body .app-content .stopwatch-common .decorative, body .app-content .stopwatch-common .decorative-mirror {
           width: 50px;
           height: 50px;
@@ -676,27 +684,59 @@ body {
     body .app-content:before {
       background-image: url("../../images/Stopwatch_tablet.png"); }
     body .app-content {
-      margin-top: 125px; } }
+      margin-top: 125px; }
+      body .app-content .controls {
+        transform: scale(0.8); }
+      body .app-content .stopwatch-common {
+        margin-top: 0; }
+        body .app-content .stopwatch-common .decorative, body .app-content .stopwatch-common .decorative-mirror {
+          transform: scale(0.8) rotate(45deg); }
+        body .app-content .stopwatch-common .decorative-mirror {
+          transform: scale(0.8) rotate(45deg); }
+      body .app-content .results-common {
+        margin-top: 5px; }
+        body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
+          height: 169px; }
+        body .app-content .results-common .results-common_list .sorted-results {
+          height: 169px; } }
 
 @media (min-width: 992px) and (max-width: 1279px) {
   body .app-content:before {
     background-image: url("../../images/Stopwatch_tablet.png"); }
   body .app-content {
     margin-top: 175px; }
+    body .app-content .controls {
+      transform: scale(0.8); }
+    body .app-content .stopwatch-common {
+      margin-top: 0; }
+      body .app-content .stopwatch-common .decorative, body .app-content .stopwatch-common .decorative-mirror {
+        transform: scale(0.8) rotate(45deg); }
+      body .app-content .stopwatch-common .decorative-mirror {
+        transform: scale(0.8) rotate(45deg); }
     body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
-      height: 225px; }
+      height: 169px; }
     body .app-content .results-common .results-common_list .sorted-results {
-      height: 225px; } }
+      height: 169px; } }
 
 @media (min-width: 1280px) and (max-width: 1439px) {
   body .app-content:before {
     background-image: url("../../images/Stopwatch_desktop_medium.png"); }
   body .app-content {
-    margin-top: 225px; }
-    body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
-      height: 225px; }
-    body .app-content .results-common .results-common_list .sorted-results {
-      height: 225px; } }
+    margin-top: 200px; }
+    body .app-content .controls {
+      transform: scale(0.8); }
+    body .app-content .stopwatch-common {
+      margin-top: 0; }
+      body .app-content .stopwatch-common .decorative, body .app-content .stopwatch-common .decorative-mirror {
+        transform: scale(0.8) rotate(45deg); }
+      body .app-content .stopwatch-common .decorative-mirror {
+        transform: scale(0.8) rotate(45deg); }
+    body .app-content .results-common .results-common_list {
+      margin-top: 5px; }
+      body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
+        height: 169px; }
+      body .app-content .results-common .results-common_list .sorted-results {
+        height: 169px; } }
 
 @media (min-width: 1440px) and (max-width: 1919px) {
   body .app-content:before {

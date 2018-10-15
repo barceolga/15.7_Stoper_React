@@ -152,7 +152,7 @@ class Stopwatch extends React.Component {
   formatTheBestTime = () => {
       let theBestScore = this.state.theBestResult;
 
-      return "Your best score is " + theBestScore + "." ;
+      return "Your best score is " + theBestScore ;
   }
 
   render = () => {

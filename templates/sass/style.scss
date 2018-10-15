@@ -512,6 +512,11 @@ body {
             padding: 14px;
           }
         }
+        .screen {
+          width: 50vw;
+          height: 75px;
+          font-size: 15px;
+        }
         .decorative {
             width: 50px;
             height: 50px;
@@ -666,6 +671,11 @@ body {
             padding: 14px;
           }
         }
+        .screen {
+          width: 40vw;
+          height: 75px;
+          font-size: 15px;
+        }
         .decorative {
             width: 50px;
             height: 50px;
@@ -770,6 +780,29 @@ body {
   }
     .app-content {
       margin-top: 125px;
+        .controls {
+          transform: scale(0.8);
+        }
+        .stopwatch-common {
+          margin-top: 0;
+          .decorative {
+            transform: scale(0.8) rotate(45deg);
+          }
+          .decorative-mirror {
+            transform: scale(0.8) rotate(45deg);
+          }
+        }
+        .results-common {
+          margin-top: 5px;
+          .results-common_list {
+            .results {
+              height: 169px
+            }
+            .sorted-results {
+              height: 169px
+            }
+          }
+        }
     }
   }
 }
@@ -780,13 +813,25 @@ body {
   }
     .app-content {
       margin-top: 175px;
+      .controls {
+        transform: scale(0.8);
+      }
+      .stopwatch-common {
+        margin-top: 0;
+        .decorative {
+          transform: scale(0.8) rotate(45deg);
+        }
+        .decorative-mirror {
+          transform: scale(0.8) rotate(45deg);
+        }
+      }
       .results-common {
         .results-common_list {
           .results {
-            height: 225px;
+            height: 169px
           }
           .sorted-results {
-            height: 225px;
+            height: 169px
           }
         }
       }
@@ -800,14 +845,27 @@ body {
     background-image: url("../../images/Stopwatch_desktop_medium.png");
   }
     .app-content {
-      margin-top: 225px;
+      margin-top: 200px;
+      .controls {
+        transform: scale(0.8);
+      }
+      .stopwatch-common {
+        margin-top: 0;
+        .decorative {
+          transform: scale(0.8) rotate(45deg);
+        }
+        .decorative-mirror {
+          transform: scale(0.8) rotate(45deg);
+        }
+      }
       .results-common {
         .results-common_list {
+           margin-top: 5px;
           .results {
-            height: 225px;
+            height: 169px;
           }
           .sorted-results {
-            height: 225px;
+            height: 169px;
           }
         }
       }
