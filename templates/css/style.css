@@ -374,7 +374,8 @@ body {
           align-items: center;
           justify-content: center;
           margin: 0 40px 0 0;
-          height: 260px;
+          min-height: 260px;
+          height: auto;
           overflow-y: auto;
           overflow-x: hidden; }
           body .app-content .results-common .results-common_list .results li, body .app-content .results-common .results-common_list .sorted-results li {
@@ -510,14 +511,15 @@ body {
           body .app-content .results-common .results-common_list .table_sorted-results {
             transform: scale(0.5); }
           body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
-            height: 25vh; }
+            min-height: 180px;
+            height: auto; }
             body .app-content .results-common .results-common_list .results li, body .app-content .results-common .results-common_list .sorted-results li {
               flex-direction: column;
               width: 80px;
               font-size: 12px;
               height: auto;
-              max-height: 60px;
               min-height: 50px;
+              max-height: 60px;
               padding: 2.5px; }
               body .app-content .results-common .results-common_list .results li span, body .app-content .results-common .results-common_list .sorted-results li span {
                 font-size: 12px;
@@ -530,13 +532,13 @@ body {
             body .app-content .results-common .results-common_list .results li:first-of-type, body .app-content .results-common .results-common_list .sorted-results li:first-of-type {
               margin-top: 35px; }
           body .app-content .results-common .results-common_list .sorted-results {
-            height: 25vh; }
+            min-height: 180px;
+            height: auto; }
             body .app-content .results-common .results-common_list .sorted-results li {
               flex-direction: column;
               width: 80px;
               font-size: 12px;
               min-height: 50px;
-              height: auto;
               max-height: 60px;
               padding: 2.5px; }
               body .app-content .results-common .results-common_list .sorted-results li span {
@@ -637,14 +639,15 @@ body {
           body .app-content .results-common .results-common_list .table_sorted-results {
             transform: scale(0.6); }
           body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
-            height: 23vh; }
+            min-height: 125px;
+            height: auto; }
             body .app-content .results-common .results-common_list .results li, body .app-content .results-common .results-common_list .sorted-results li {
               flex-direction: row;
               width: 90px;
               font-size: 13px;
               height: auto;
-              max-height: 45px;
-              min-height: 40px;
+              max-height: 40px;
+              min-height: 35px;
               padding: 2.5px; }
               body .app-content .results-common .results-common_list .results li span, body .app-content .results-common .results-common_list .sorted-results li span {
                 font-size: 11px;
@@ -657,14 +660,14 @@ body {
             body .app-content .results-common .results-common_list .results li:first-of-type, body .app-content .results-common .results-common_list .sorted-results li:first-of-type {
               margin-top: 20px; }
           body .app-content .results-common .results-common_list .sorted-results {
-            height: 23vh; }
+            min-height: 125px;
+            height: auto; }
             body .app-content .results-common .results-common_list .sorted-results li {
               flex-direction: row;
               width: 90px;
               font-size: 13px;
-              min-height: 40px;
-              height: auto;
-              max-height: 45px;
+              max-height: 40px;
+              min-height: 35px;
               padding: 2.5px; }
               body .app-content .results-common .results-common_list .sorted-results li span {
                 font-size: 11px;
@@ -696,9 +699,11 @@ body {
       body .app-content .results-common {
         margin-top: 5px; }
         body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
-          height: 169px; }
+          min-height: 169px;
+          height: auto; }
         body .app-content .results-common .results-common_list .sorted-results {
-          height: 169px; } }
+          min-height: 169px;
+          height: auto; } }
 
 @media (min-width: 992px) and (max-width: 1279px) {
   body .app-content:before {
@@ -714,9 +719,11 @@ body {
       body .app-content .stopwatch-common .decorative-mirror {
         transform: scale(0.8) rotate(45deg); }
     body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
-      height: 169px; }
+      min-height: 169px;
+      height: auto; }
     body .app-content .results-common .results-common_list .sorted-results {
-      height: 169px; } }
+      min-height: 169px;
+      height: auto; } }
 
 @media (min-width: 1280px) and (max-width: 1439px) {
   body .app-content:before {
@@ -734,9 +741,11 @@ body {
     body .app-content .results-common .results-common_list {
       margin-top: 5px; }
       body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
-        height: 169px; }
+        min-height: 169px;
+        height: auto; }
       body .app-content .results-common .results-common_list .sorted-results {
-        height: 169px; } }
+        min-height: 169px;
+        height: auto; } }
 
 @media (min-width: 1440px) and (max-width: 1919px) {
   body .app-content:before {

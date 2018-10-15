@@ -383,7 +383,8 @@ body {
                 align-items: center;
                 justify-content: center;
                 margin: 0 40px 0 0;
-                height: 260px;
+                min-height: 260px;
+                height: auto;
                 overflow-y: auto;
                 overflow-x: hidden;
                 li {
@@ -557,14 +558,15 @@ body {
             transform: scale(0.5);
           }
           .results {
-            height: 25vh;
+            min-height: 180px;
+            height: auto;
             li {
               flex-direction: column;
               width: 80px;
               font-size: 12px;
               height: auto;
-              max-height: 60px;
               min-height: 50px;
+              max-height: 60px;
               padding: 2.5px;
               span {
                 font-size: 12px;
@@ -582,13 +584,13 @@ body {
             }
           }
           .sorted-results {
-              height: 25vh;
+            min-height: 180px;
+            height: auto;
             li {
               flex-direction: column;
               width: 80px;
               font-size: 12px;
               min-height: 50px;
-              height: auto;
               max-height: 60px;
               padding: 2.5px;
               span {
@@ -716,14 +718,15 @@ body {
             transform: scale(0.6);
           }
           .results {
-            height: 23vh;
+            min-height: 125px;
+            height: auto;
             li {
               flex-direction: row;
               width: 90px;
               font-size: 13px;
               height: auto;
-              max-height: 45px;
-              min-height: 40px;
+              max-height: 40px;
+              min-height: 35px;
               padding: 2.5px;
               span {
                 font-size: 11px;
@@ -741,14 +744,14 @@ body {
             }
           }
           .sorted-results {
-              height: 23vh;
+            min-height: 125px;
+            height: auto;
             li {
               flex-direction: row;
               width: 90px;
               font-size: 13px;
-              min-height: 40px;
-              height: auto;
-              max-height: 45px;
+              max-height: 40px;
+              min-height: 35px;
               padding: 2.5px;
               span {
                 font-size: 11px;
@@ -796,10 +799,12 @@ body {
           margin-top: 5px;
           .results-common_list {
             .results {
-              height: 169px
+              min-height: 169px;
+              height: auto;
             }
             .sorted-results {
-              height: 169px
+              min-height: 169px;
+              height: auto;
             }
           }
         }
@@ -828,10 +833,12 @@ body {
       .results-common {
         .results-common_list {
           .results {
-            height: 169px
+            min-height: 169px;
+            height: auto;
           }
           .sorted-results {
-            height: 169px
+            min-height: 169px;
+            height: auto;
           }
         }
       }
@@ -862,10 +869,12 @@ body {
         .results-common_list {
            margin-top: 5px;
           .results {
-            height: 169px;
+            min-height: 169px;
+            height: auto;
           }
           .sorted-results {
-            height: 169px;
+            min-height: 169px;
+            height: auto;
           }
         }
       }
