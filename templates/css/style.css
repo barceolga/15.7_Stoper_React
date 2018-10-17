@@ -43,18 +43,32 @@ body {
         text-align: center;
         text-shadow: 4px 4px #1a0013;
         height: 35%;
-        margin: 0 0 0 15px; }
+        margin: 0 0 0 25px; }
       body .app-content .controls .controls_panel {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
+        margin-top: 10px;
         max-width: 33%;
         height: 25%; }
+        body .app-content .controls .controls_panel .controls-button_wrap {
+          position: relative;
+          height: auto;
+          min-width: 50px;
+          margin: 7.5px; }
+        body .app-content .controls .controls_panel .controls-button_description {
+          position: absolute;
+          top: -35px;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          color: #000066;
+          font-size: 15px;
+          text-align: center; }
         body .app-content .controls .controls_panel .controls-button {
           min-width: 50px;
           height: 50px;
-          margin: 7.5px;
           background-color: #b3cccc;
           color: #000066;
           display: flex;
@@ -443,17 +457,22 @@ body {
       height: 100%;
       opacity: 0.80; }
     body .app-content {
-      margin-top: 17vh; }
+      margin-top: 17vh;
+      overflow-x: hidden; }
       body .app-content .controls {
-        height: auto; }
+        height: auto;
+        width: 100%; }
         body .app-content .controls .controls-title {
           font-size: 35px;
           height: auto;
           text-shadow: 3px 3px #1a0013;
-          margin: 0 0 0 10px; }
+          margin: 0 0 0 15px; }
         body .app-content .controls .controls_panel {
-          max-width: 100vw;
-          height: auto; }
+          width: 80%;
+          height: auto;
+          justify-content: center; }
+          body .app-content .controls .controls_panel .controls-button_wrap {
+            margin: 5px 0 0 0; }
           body .app-content .controls .controls_panel .controls-button {
             font-size: 15px;
             min-width: 35px;
@@ -637,7 +656,7 @@ body {
           body .app-content .results-common .results-common_list .table_sorted-results {
             transform: scale(0.6); }
           body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
-            height: 125px; }
+            height: 100px; }
             body .app-content .results-common .results-common_list .results li, body .app-content .results-common .results-common_list .sorted-results li {
               flex-direction: row;
               width: 90px;
@@ -655,7 +674,7 @@ body {
             body .app-content .results-common .results-common_list .results li:first-of-type, body .app-content .results-common .results-common_list .sorted-results li:first-of-type {
               margin-top: 0px; }
           body .app-content .results-common .results-common_list .sorted-results {
-            height: 125px; }
+            height: 100px; }
             body .app-content .results-common .results-common_list .sorted-results li {
               flex-direction: row;
               width: 90px;
@@ -692,11 +711,11 @@ body {
       body .app-content .results-common {
         margin-top: 5px; }
         body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
-          height: 169px; }
+          height: 320px; }
           body .app-content .results-common .results-common_list .results li:first-of-type, body .app-content .results-common .results-common_list .sorted-results li:first-of-type {
             margin-top: 0; }
         body .app-content .results-common .results-common_list .sorted-results {
-          height: 169px; }
+          height: 320px; }
           body .app-content .results-common .results-common_list .sorted-results li:first-of-type {
             margin-top: 0; } }
 
@@ -714,11 +733,11 @@ body {
       body .app-content .stopwatch-common .decorative-mirror {
         transform: scale(0.8) rotate(45deg); }
     body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
-      height: 169px; }
+      height: 260px; }
       body .app-content .results-common .results-common_list .results li:first-of-type, body .app-content .results-common .results-common_list .sorted-results li:first-of-type {
         margin-top: 0; }
     body .app-content .results-common .results-common_list .sorted-results {
-      height: 169px; }
+      height: 260px; }
       body .app-content .results-common .results-common_list .sorted-results li:first-of-type {
         margin-top: 0; } }
 
