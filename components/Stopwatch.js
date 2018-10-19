@@ -140,6 +140,9 @@ class Stopwatch extends React.Component {
         });
   }
   pickTheBestTime = () => {
+        if (this.state.list.length ==0) {
+          return;
+        }
         const myList = [...this.state.list];
         let sortedList = myList.sort(function(a, b) {return (a.myValue > b.myValue) ? 1 : ((b.myValue > a.myValue) ? -1 : 0);});
         const theBestTime = sortedList[0].result;
