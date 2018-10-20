@@ -32,6 +32,7 @@ body {
   background-size: cover;
   height: 100%;
   opacity: 0.7;
+  padding: 0;
 }
   .app-content {
     position: relative;
@@ -43,6 +44,7 @@ body {
     align-items: center;
     margin-top: 50px;
     opacity: 1;
+    height: 100vh;
       .controls {
         display: flex;
         flex-direction: column;
@@ -102,7 +104,7 @@ body {
             box-shadow: 5px 10px  $dark-steel-blue;
             border: none;
             border-radius: 15px;
-            transition: 1s linear;
+            transition: 0.5s linear;
             &:hover{
               color: #fff;
               background-color: $dark-steel-blue;
@@ -129,7 +131,7 @@ body {
           background-color: #000;
           color: $steel-blue;
           text-align: center;
-          transition: 1s linear;
+          transition: 0.33s linear;
           font-family: $main-font;
           font-size: 35px;
           font-weight: 600;
@@ -155,7 +157,7 @@ body {
           background-color: #000;
           color: #ffd699;
           text-align: center;
-          transition: 1s linear;
+          transition: 0.33s linear;
           font-family: $main-font;
           font-size: 18px;
           font-weight: 600;
@@ -176,7 +178,7 @@ body {
             border-left: 10px solid $dark-steel-blue;
             color:  $deep-navy;
             box-shadow: 10px 5px  $super-deep-violet;
-            transition: 1s ease-in-out;
+            transition: 0.33s ease-in-out;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -261,7 +263,7 @@ body {
                 animation: none;
               }
               &.on-run {
-                  transition: 1s ease-in-out;
+                  transition: 0.33s ease-in-out;
                   animation: moving_head 1s infinite;
                  }
             }
@@ -439,7 +441,7 @@ body {
                       text-shadow: none;
                       text-transform: uppercase;
                       cursor: pointer;
-                      transition: 1s linear;
+                      transition: 0.5s linear;
                       &:hover{
                         color: #fff;;
                         background-color: $dark-steel-blue;
@@ -479,7 +481,7 @@ body {
   body {
     position: relative;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     .app-content:before {
     content: "";
     position: fixed;
@@ -590,8 +592,7 @@ body {
             transform: scale(0.5);
           }
           .results {
-            height: 180px;
-            //height: auto;
+            height: 35vh;
             padding-bottom: 5px;
             li {
               flex-direction: row;
@@ -616,7 +617,7 @@ body {
             }
           }
           .sorted-results {
-            height: 180px;
+            height: 35vh;
             padding-bottom: 5px;
             li {
               flex-direction: row;
@@ -760,7 +761,7 @@ body {
             transform: scale(0.6);
           }
           .results {
-            height: 100px;
+            height: 50vh;
             li {
               flex-direction: row;
               width: 90px;
@@ -783,7 +784,7 @@ body {
             }
           }
           .sorted-results {
-            height: 100px;
+            height: 50vh;
             li {
               flex-direction: row;
               width: 90px;
@@ -822,6 +823,7 @@ body {
       margin-top: 125px;
         .controls {
           transform: scale(0.8);
+          background-color: rgba(0, 142, 160,0.7)
         }
         .stopwatch-common {
           margin-top: 0;

@@ -16,7 +16,8 @@ body {
     background-image: url("../../images/Stopwatch_background.jpg");
     background-size: cover;
     height: 100%;
-    opacity: 0.7; }
+    opacity: 0.7;
+    padding: 0; }
   body .app-content {
     position: relative;
     overflow: auto;
@@ -26,7 +27,8 @@ body {
     justify-content: flex-start;
     align-items: center;
     margin-top: 50px;
-    opacity: 1; }
+    opacity: 1;
+    height: 100vh; }
     body .app-content .controls {
       display: flex;
       flex-direction: column;
@@ -81,7 +83,7 @@ body {
           box-shadow: 5px 10px #283e3e;
           border: none;
           border-radius: 15px;
-          transition: 1s linear; }
+          transition: 0.5s linear; }
           body .app-content .controls .controls_panel .controls-button:hover {
             color: #fff;
             background-color: #283e3e;
@@ -104,7 +106,7 @@ body {
         background-color: #000;
         color: #b3cccc;
         text-align: center;
-        transition: 1s linear;
+        transition: 0.33s linear;
         font-family: "IBM Plex Mono", monospace;
         font-size: 35px;
         font-weight: 600; }
@@ -127,7 +129,7 @@ body {
         background-color: #000;
         color: #ffd699;
         text-align: center;
-        transition: 1s linear;
+        transition: 0.33s linear;
         font-family: "IBM Plex Mono", monospace;
         font-size: 18px;
         font-weight: 600; }
@@ -145,7 +147,7 @@ body {
         border-left: 10px solid #283e3e;
         color: #000066;
         box-shadow: 10px 5px #1a0013;
-        transition: 1s ease-in-out;
+        transition: 0.33s ease-in-out;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -245,7 +247,7 @@ body {
           body .app-content .results-common .results-animation .results-animation_head.stopped {
             animation: none; }
           body .app-content .results-common .results-animation .results-animation_head.on-run {
-            transition: 1s ease-in-out;
+            transition: 0.33s ease-in-out;
             animation: moving_head 1s infinite; }
         body .app-content .results-common .results-animation .results-animation_body {
           display: flex;
@@ -425,7 +427,7 @@ body {
               text-shadow: none;
               text-transform: uppercase;
               cursor: pointer;
-              transition: 1s linear; }
+              transition: 0.5s linear; }
               body .app-content .results-common .results-common_list .results li button:hover, body .app-content .results-common .results-common_list .sorted-results li button:hover {
                 color: #fff;
                 background-color: #283e3e; }
@@ -444,7 +446,7 @@ body {
   body {
     position: relative;
     overflow-x: hidden;
-    overflow-y: auto; }
+    overflow-y: hidden; }
     body .app-content:before {
       content: "";
       position: fixed;
@@ -537,7 +539,7 @@ body {
           body .app-content .results-common .results-common_list .table_sorted-results {
             transform: scale(0.5); }
           body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
-            height: 180px;
+            height: 35vh;
             padding-bottom: 5px; }
             body .app-content .results-common .results-common_list .results li, body .app-content .results-common .results-common_list .sorted-results li {
               flex-direction: row;
@@ -557,7 +559,7 @@ body {
             body .app-content .results-common .results-common_list .results li:first-of-type, body .app-content .results-common .results-common_list .sorted-results li:first-of-type {
               margin-top: 0; }
           body .app-content .results-common .results-common_list .sorted-results {
-            height: 180px;
+            height: 35vh;
             padding-bottom: 5px; }
             body .app-content .results-common .results-common_list .sorted-results li {
               flex-direction: row;
@@ -672,7 +674,7 @@ body {
           body .app-content .results-common .results-common_list .table_sorted-results {
             transform: scale(0.6); }
           body .app-content .results-common .results-common_list .results, body .app-content .results-common .results-common_list .sorted-results {
-            height: 100px; }
+            height: 50vh; }
             body .app-content .results-common .results-common_list .results li, body .app-content .results-common .results-common_list .sorted-results li {
               flex-direction: row;
               width: 90px;
@@ -690,7 +692,7 @@ body {
             body .app-content .results-common .results-common_list .results li:first-of-type, body .app-content .results-common .results-common_list .sorted-results li:first-of-type {
               margin-top: 0px; }
           body .app-content .results-common .results-common_list .sorted-results {
-            height: 100px; }
+            height: 50vh; }
             body .app-content .results-common .results-common_list .sorted-results li {
               flex-direction: row;
               width: 90px;
@@ -717,7 +719,8 @@ body {
     body .app-content {
       margin-top: 125px; }
       body .app-content .controls {
-        transform: scale(0.8); }
+        transform: scale(0.8);
+        background-color: rgba(0, 142, 160, 0.7); }
       body .app-content .stopwatch-common {
         margin-top: 0; }
         body .app-content .stopwatch-common .decorative, body .app-content .stopwatch-common .decorative-mirror {
