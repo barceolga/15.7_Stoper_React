@@ -579,7 +579,7 @@ body {
             body .app-content .results-common .results-common_list .sorted-results li:first-of-type {
               margin-top: 0; } }
 
-@media (max-width: 850px) and (orientation: landscape) {
+@media (max-width: 767px) and (orientation: landscape) {
   body {
     position: relative;
     overflow-y: hidden;
@@ -717,10 +717,10 @@ body {
     body .app-content:before {
       background-image: url("../../images/Stopwatch_tablet.png"); }
     body .app-content {
-      margin-top: 125px; }
+      margin-top: 125px;
+      background-color: #007180; }
       body .app-content .controls {
-        transform: scale(0.8);
-        background-color: rgba(0, 142, 160, 0.7); }
+        transform: scale(0.8); }
       body .app-content .stopwatch-common {
         margin-top: 0; }
         body .app-content .stopwatch-common .decorative, body .app-content .stopwatch-common .decorative-mirror {

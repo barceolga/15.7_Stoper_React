@@ -10,7 +10,7 @@ $dark-steel-blue: #283e3e;
 $super-deep-violet: #1a0013;
 
 $phone_portrait: "(max-width: 767px) and (orientation: portrait)";
-$phone_landscape: "(max-width: 850px) and (orientation: landscape)";
+$phone_landscape: "(max-width: 767px) and (orientation: landscape)";
 $tablet: "(min-width: 768px) and (max-width: 991px)";
 $desktop_small: "(min-width: 992px) and (max-width: 1279px)";
 $desktop_medium: "(min-width: 1280px) and (max-width: 1439px)";
@@ -821,9 +821,10 @@ body {
   }
     .app-content {
       margin-top: 125px;
+      background-color: #007180;
+
         .controls {
           transform: scale(0.8);
-          background-color: rgba(0, 142, 160,0.7)
         }
         .stopwatch-common {
           margin-top: 0;
